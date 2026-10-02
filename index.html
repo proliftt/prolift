@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" style="overflow-x:hidden">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>PRO LIFT | Sports Media Agency</title>
+    <meta name="description" content="PRO LIFT — Sports Media Agency. Building athletes into brands through premium visual storytelling and strategic collaborations.">
+    <link rel="icon" href="https://z-cdn-media.chatglm.cn/files/f91c8087-5dc1-4450-b335-873e4172d743.png?auth_key=1890930068-1e92cc0b5ae046c9ab1f708c357f9eac-0-9cf47af7dff051c4d1b90dbcbbe4766f" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
@@ -21,6 +23,7 @@
     </script>
     <style>
         * { -webkit-tap-highlight-color: transparent; }
+        html, body { overflow-x: hidden; }
         body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; padding-top: env(safe-area-inset-top); }
         .font-bebas { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
         .nav-link { position: relative; }
@@ -55,15 +58,18 @@
         .founder-card:active { transform: scale(0.97); }
         .founder-card:hover { border-color: #fff !important; }
         @media (max-width: 767px) { .mobile-bottom-pad { padding-bottom: calc(1rem + env(safe-area-inset-bottom)); } }
+        .hero-text-shadow {
+            text-shadow: 0 2px 12px rgba(0,0,0,0.85), 0 4px 40px rgba(0,0,0,0.6);
+        }
     </style>
 </head>
-<body class="bg-black text-white font-inter">
+<body class="bg-black text-white font-inter" style="overflow-x:hidden">
 
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-xl border-b border-white/10 transition-all duration-300" style="padding-top:env(safe-area-inset-top)">
         <div class="max-w-7xl mx-auto px-4 sm:px-8">
             <div class="flex items-center justify-between h-14 sm:h-20">
                 <a href="#home" class="flex-shrink-0">
-                    <img src="https://z-cdn-media.chatglm.cn/files/a72d1bea-9c5e-4bf2-bacf-34d35157b957.jpeg?auth_key=1883073622-e3552e97726448f1bb0e4367cbc13b5b-0-442ab8626a91e08c82c8eccdc59e641d" alt="PRO LIFT" class="h-8 sm:h-11 w-auto object-contain">
+                    <img src="https://z-cdn-media.chatglm.cn/files/f91c8087-5dc1-4450-b335-873e4172d743.png?auth_key=1890930068-1e92cc0b5ae046c9ab1f708c357f9eac-0-9cf47af7dff051c4d1b90dbcbbe4766f" alt="PRO LIFT" class="h-8 sm:h-11 w-auto object-contain">
                 </a>
                 <div class="hidden md:flex items-center gap-7 lg:gap-9">
                     <a href="#home" class="nav-link text-xs font-semibold tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors">Home</a>
@@ -71,16 +77,16 @@
                     <a href="#trusted" class="nav-link text-xs font-semibold tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors">Trusted By</a>
                     <a href="#work" class="nav-link text-xs font-semibold tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors">Our Work</a>
                     <a href="#model" class="nav-link text-xs font-semibold tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors">The Model</a>
-                    <a href="#join" class="nav-link text-xs font-semibold tracking-[0.15em] uppercase bg-white text-black px-5 py-2.5 hover:bg-white/90 transition-colors">Join Us</a>
+                    <a href="#join" class="text-xs font-semibold tracking-[0.15em] uppercase bg-white text-black px-5 py-2.5 hover:bg-white/90 transition-colors">Join Us</a>
                 </div>
-                <button class="md:hidden w-11 h-11 flex items-center justify-center -mr-1" onclick="toggleMenu()" aria-label="Menu">
+                <button class="md:hidden w-11 h-11 flex flex-col items-center justify-center -mr-1" onclick="toggleMenu()" aria-label="Menu">
                     <span id="bar1" class="block w-6 h-[1.5px] bg-white transition-all duration-300 origin-center"></span>
                     <span id="bar2" class="block w-6 h-[1.5px] bg-white transition-all duration-300 mt-1.5"></span>
-                    <span id="bar3" class="block w-4 h-[1.5px] bg-white transition-all duration-300 mt-1.5 self-end"></span>
+                    <span id="bar3" class="block w-6 h-[1.5px] bg-white transition-all duration-300 mt-1.5"></span>
                 </button>
             </div>
         </div>
-        <div id="mobileMenu" class="md:hidden max-h-0 overflow-hidden transition-all duration-400 ease-in-out bg-black/95 backdrop-blur-xl border-t border-white/10">
+        <div id="mobileMenu" class="md:hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-black/95 backdrop-blur-xl border-t border-white/10">
             <div class="px-4 pt-2 pb-6 flex flex-col gap-1">
                 <a href="#home" onclick="closeMenu()" class="text-sm font-semibold tracking-[0.12em] uppercase text-white/60 hover:text-white py-3 border-b border-white/5 transition-colors">Home</a>
                 <a href="#family" onclick="closeMenu()" class="text-sm font-semibold tracking-[0.12em] uppercase text-white/60 hover:text-white py-3 border-b border-white/5 transition-colors">The Family</a>
@@ -93,16 +99,22 @@
     </nav>
 
     <section id="home" class="relative min-h-[100svh] flex flex-col items-center justify-center overflow-hidden grain">
+        <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="https://z-cdn-media.chatglm.cn/files/f91c8087-5dc1-4450-b335-873e4172d743.png?auth_key=1890930068-1e92cc0b5ae046c9ab1f708c357f9eac-0-9cf47af7dff051c4d1b90dbcbbe4766f" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+            <source src="https://videotourl.com/videos/1790928866733-b5535e6f-2f19-46d3-ae54-b7ecc062cb96.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 bg-black/65 z-[1]"></div>
+        <div class="absolute inset-0 z-[2]" style="background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 40%, transparent 60%, rgba(0,0,0,0.8) 100%);"></div>
+
         <div class="relative z-10 text-center px-5 pt-14">
             <div class="fade-up mb-6 sm:mb-8">
-                <img src="https://z-cdn-media.chatglm.cn/files/a72d1bea-9c5e-4bf2-bacf-34d35157b957.jpeg?auth_key=1883073622-e3552e97726448f1bb0e4367cbc13b5b-0-442ab8626a91e08c82c8eccdc59e641d" alt="PRO LIFT" class="h-24 sm:h-28 md:h-36 mx-auto object-contain">
+                <img src="https://z-cdn-media.chatglm.cn/files/f91c8087-5dc1-4450-b335-873e4172d743.png?auth_key=1890930068-1e92cc0b5ae046c9ab1f708c357f9eac-0-9cf47af7dff051c4d1b90dbcbbe4766f" alt="PRO LIFT" class="h-24 sm:h-28 md:h-36 mx-auto object-contain">
             </div>
-            <p class="fade-up text-[10px] sm:text-sm font-semibold tracking-[0.3em] uppercase text-white/40 mb-4 sm:mb-6" style="animation-delay:0.15s">Sports Media Agency</p>
-            <h1 class="fade-up font-bebas text-[3.2rem] sm:text-7xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight text-white" style="animation-delay:0.3s">YOU FOCUS ON<br>YOUR GAME.</h1>
-            <h1 class="fade-up font-bebas text-[3.2rem] sm:text-7xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight text-white/30 mt-0.5 sm:mt-1" style="animation-delay:0.45s">WE FOCUS ON<br>YOUR BRAND.</h1>
-            <p class="fade-up mt-6 sm:mt-10 text-xs sm:text-base text-white/40 max-w-sm sm:max-w-md mx-auto leading-relaxed px-2" style="animation-delay:0.6s">Building athletes into brands through premium visual storytelling and strategic collaborations.</p>
+            <p class="fade-up hero-text-shadow text-[10px] sm:text-sm font-semibold tracking-[0.3em] uppercase text-white/40 mb-4 sm:mb-6" style="animation-delay:0.15s">Sports Media Agency</p>
+            <h1 class="fade-up hero-text-shadow font-bebas text-[3.2rem] sm:text-7xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight text-white" style="animation-delay:0.3s">YOU FOCUS ON<br>YOUR GAME.</h1>
+            <h1 class="fade-up hero-text-shadow font-bebas text-[3.2rem] sm:text-7xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight text-white/30 mt-0.5 sm:mt-1" style="animation-delay:0.45s">WE FOCUS ON<br>YOUR BRAND.</h1>
+            <p class="fade-up hero-text-shadow mt-6 sm:mt-10 text-xs sm:text-base text-white/40 max-w-sm sm:max-w-md mx-auto leading-relaxed px-2" style="animation-delay:0.6s">Building athletes into brands through premium visual storytelling and strategic collaborations.</p>
         </div>
-        <div class="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 scroll-bounce">
+        <div class="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 scroll-bounce z-10">
             <div class="flex flex-col items-center gap-1.5 text-white/30">
                 <span class="text-[9px] tracking-[0.2em] uppercase">Scroll</span>
                 <iconify-icon icon="lucide:chevron-down" width="16"></iconify-icon>
@@ -220,7 +232,7 @@
                 <p class="mt-3 sm:mt-4 text-xs sm:text-sm text-white/40 max-w-sm mx-auto leading-relaxed">Fill out the form below and our team will get back to you.</p>
             </div>
             <div class="fade-up bg-white/5 border border-white/10 overflow-hidden">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUFhwnfyf9Y3TjroQy65KfxzSkuLkS2_H8KuYZRrgVfdVTSA/viewform?embedded=true" width="100%" height="600" class="sm:!h-[750px]" frameborder="0" marginheight="0" marginwidth="0" style="display:block;">Loading…</iframe>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUFhwnfyf9Y3TjroQy65KfxzSkuLkS2_H8KuYZRrgVfdVTSA/viewform?embedded=true" width="100%" height="600" class="sm:!h-[750px]" frameborder="0" marginheight="0" marginwidth="0" style="display:block;max-width:100%;">Loading…</iframe>
             </div>
         </div>
     </section>
@@ -249,11 +261,11 @@
     <footer class="border-t border-white/10 py-8 sm:py-12 px-4 sm:px-8" style="padding-bottom: calc(2rem + env(safe-area-inset-bottom))">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
             <div class="flex items-center gap-3">
-                <img src="https://z-cdn-media.chatglm.cn/files/a72d1bea-9c5e-4bf2-bacf-34d35157b957.jpeg?auth_key=1883073622-e3552e97726448f1bb0e4367cbc13b5b-0-442ab8626a91e08c82c8eccdc59e641d" alt="PRO LIFT" class="h-6 sm:h-8 object-contain">
+                <img src="https://z-cdn-media.chatglm.cn/files/f91c8087-5dc1-4450-b335-873e4172d743.png?auth_key=1890930068-1e92cc0b5ae046c9ab1f708c357f9eac-0-9cf47af7dff051c4d1b90dbcbbe4766f" alt="PRO LIFT" class="h-6 sm:h-8 object-contain">
                 <span class="text-[10px] sm:text-xs text-white/30">© 2025 ProLift Sports</span>
             </div>
             <div class="flex items-center gap-5 sm:gap-6">
-                <a href="https://www.instagram.com/prolift_sports?igsh=MXFsdDlidGMyeXptNg%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="w-10 h-10 flex items-center justify-center text-white/30 hover:text-white transition-colors"><iconify-icon icon="lucide:instagram" width="18"></iconify-icon></a>
+                <a href="https://www.instagram.com/proliftsports_/" target="_blank" rel="noopener" class="w-10 h-10 flex items-center justify-center text-white/30 hover:text-white transition-colors"><iconify-icon icon="lucide:instagram" width="18"></iconify-icon></a>
                 <a href="#" class="w-10 h-10 flex items-center justify-center text-white/30 hover:text-white transition-colors"><iconify-icon icon="lucide:twitter" width="18"></iconify-icon></a>
                 <a href="#" class="w-10 h-10 flex items-center justify-center text-white/30 hover:text-white transition-colors"><iconify-icon icon="lucide:linkedin" width="18"></iconify-icon></a>
                 <a href="#" class="w-10 h-10 flex items-center justify-center text-white/30 hover:text-white transition-colors"><iconify-icon icon="lucide:youtube" width="18"></iconify-icon></a>
@@ -263,45 +275,90 @@
 
     <div id="playerModal" class="modal-overlay fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-end sm:items-center justify-center sm:p-8" style="padding-bottom:env(safe-area-inset-bottom)">
         <div class="modal-body relative w-full sm:max-w-4xl max-h-[92vh] sm:max-h-[85vh] overflow-y-auto no-scrollbar bg-neutral-950 border-t sm:border border-white/10 rounded-t-2xl sm:rounded-2xl">
-            <button onclick="closeModal()" class="sticky top-0 float-right mr-3 mt-3 w-10 h-10 flex items-center justify-center border border-white/20 hover:border-white hover:bg-white/10 transition-all z-10 rounded-full bg-black/50 sm:bg-transparent"><iconify-icon icon="lucide:x" width="18"></iconify-icon></button>
+            <button onclick="closeModal()" aria-label="Close" class="sticky top-0 float-right mr-3 mt-3 w-10 h-10 flex items-center justify-center border border-white/20 hover:border-white hover:bg-white/10 transition-all z-10 rounded-full bg-black/50 sm:bg-transparent"><iconify-icon icon="lucide:x" width="18"></iconify-icon></button>
             <div class="clear-both"></div>
             <div id="modalContent" class="relative"></div>
         </div>
     </div>
 
     <script>
+    // Video error fallback + readyState check
+    (function() {
+        var heroVid = document.getElementById('heroVideo');
+        if (heroVid) {
+            heroVid.addEventListener('error', function() {
+                this.style.display = 'none';
+            });
+            if (heroVid.readyState >= 3) {
+                heroVid.style.opacity = '1';
+            } else {
+                heroVid.addEventListener('loadeddata', function() {
+                    this.style.opacity = '1';
+                });
+                heroVid.style.opacity = '0';
+                heroVid.style.transition = 'opacity 0.8s ease';
+            }
+        }
+    })();
+
+    const LOGO_URL = "https://z-cdn-media.chatglm.cn/files/f91c8087-5dc1-4450-b335-873e4172d743.png?auth_key=1890930068-1e92cc0b5ae046c9ab1f708c357f9eac-0-9cf47af7dff051c4d1b90dbcbbe4766f";
+
     const familyPlayers = [
         {
             name: "YASH THAKUR",
             image: "https://z-cdn-media.chatglm.cn/files/643f1b94-109a-4c67-a5fa-cbef69193f2b.jpeg?auth_key=1883072654-984ea756d248421db05276d2dba3560a-0-280fa4e71e2b539a5335033039d0657b",
-            sport: "Cricket", role: "Right-Arm Fast Bowler",
-            iplTeam: "Lucknow Super Giants", domesticTeam: "Vidarbha", currentStatus: "India A",
-            bio: "Express pace merchant regularly clocking 145+ kph. A death-overs specialist rewarded with India A selection for consistent performances in IPL and domestic cricket.",
-            achievements: ["IPL — Lucknow Super Giants (2023–Present)", "India A Selection (Current)", "Domestic Cricket — Vidarbha", "Express pace — consistently 145+ kph", "Specialist death-overs bowler", "Rising star in Indian fast bowling"]
+            sport: "Cricket", role: "Premier Fast Bowler",
+            iplTeam: "Lucknow Super Giants (LSG)", domesticTeam: "Vidarbha", currentStatus: "Team India",
+            bio: "Express pace merchant regularly clocking 145+ kph. Rewarded with Team India call-up for consistent performances in IPL and domestic cricket.",
+            achievements: ["IPL — Lucknow Super Giants (LSG) (2023–Present)", "Team India Selection (Current)", "Domestic Cricket — Vidarbha", "Express pace — consistently 145+ kph", "Premier fast bowling talent", "Rising star in Indian fast bowling"],
+            stats: [
+                { label: "Matches", value: "—" },
+                { label: "Wickets", value: "—" },
+                { label: "Economy", value: "—" },
+                { label: "Best", value: "—" }
+            ]
         },
         {
             name: "DARSHAN NALKANDE",
             image: "https://z-cdn-media.chatglm.cn/files/002be920-875b-46b3-8c8c-8cdee57eeb7b.jpeg?auth_key=1883072654-570d977db3b740ebbce16a89b9071474-0-0db214ff37d5c38e08e422063d4d3c73",
-            sport: "Cricket", role: "Right-Arm Fast-Medium Bowler",
+            sport: "Cricket", role: "All-Rounder",
             iplTeam: "Gujarat Titans", domesticTeam: "Vidarbha", currentStatus: null,
-            bio: "A consistent wicket-taker who played a crucial role in Vidarbha's Vijay Hazare Trophy triumph. Known for picking up key breakthroughs in pressure situations.",
-            achievements: ["IPL — Gujarat Titans (2022–Present)", "Vijay Hazare Trophy Winner", "Domestic Cricket — Vidarbha", "Key wicket-taker in limited-overs cricket", "Effective powerplay and middle-overs bowler"]
+            bio: "A dynamic all-rounder who contributes with both bat and ball. Played a crucial role in Vidarbha's Vijay Hazare Trophy triumph and is known for picking up key breakthroughs in pressure situations.",
+            achievements: ["IPL — Gujarat Titans (2022–Present)", "Vijay Hazare Trophy Winner", "Domestic Cricket — Vidarbha", "Key wicket-taker in limited-overs cricket", "Effective powerplay and middle-overs bowler", "Valuable lower-order batting contributor"],
+            stats: [
+                { label: "Matches", value: "—" },
+                { label: "Wickets", value: "—" },
+                { label: "Economy", value: "—" },
+                { label: "Best", value: "—" }
+            ]
         },
         {
             name: "ATHARVA TAIDE",
             image: "https://z-cdn-media.chatglm.cn/files/fcb81e8c-762a-4f69-8964-2ca37e92ccfe.jpeg?auth_key=1883072654-67e28e7aec3d408b8fe25837c91fec17-0-003168b1e044b0f7cc3ede9f218b29d6",
-            sport: "Cricket", role: "Left-Handed Batsman / Wicket-Keeper",
-            iplTeam: "Sunrisers Hyderabad", domesticTeam: "Vidarbha", currentStatus: null,
-            bio: "An aggressive top-order batsman who can keep wickets. His ability to attack from ball one makes him dangerous in limited-overs cricket.",
-            achievements: ["IPL — Sunrisers Hyderabad (2023–Present)", "Domestic Cricket — Vidarbha", "Aggressive top-order stroke player", "Versatile wicket-keeper batsman", "High strike-rate in powerplay overs"]
+            sport: "Cricket", role: "Explosive Opener / Top-Order Batsman",
+            iplTeam: "PBKS / SRH", domesticTeam: "Vidarbha", currentStatus: null,
+            bio: "An aggressive top-order batsman who can take the game away from the opposition in the powerplay. His explosive stroke play makes him a dangerous proposition in any format.",
+            achievements: ["IPL — PBKS / SRH (2023–Present)", "Domestic Cricket — Vidarbha", "Explosive top-order stroke player", "Dangerous in powerplay overs", "High strike-rate batting ability"],
+            stats: [
+                { label: "Matches", value: "—" },
+                { label: "Runs", value: "—" },
+                { label: "Strike Rate", value: "—" },
+                { label: "Highest", value: "—" }
+            ]
         },
         {
             name: "APOORV WANKHADE",
             image: "https://z-cdn-media.chatglm.cn/files/593f4bff-1f62-4432-bc57-71a737d8f43d.jpeg?auth_key=1883072654-250a4b44f0344348a789d31c749a64b4-0-c3643d5c3a8c46874832353b6624f632",
-            sport: "Cricket", role: "Right-Handed Batsman",
-            iplTeam: "Mumbai Indians", domesticTeam: "Vidarbha", currentStatus: null,
-            bio: "An experienced domestic campaigner and reliable middle-order batsman. A key figure in Vidarbha's setup, bringing stability and grit across years of consistent performances.",
-            achievements: ["IPL — Mumbai Indians (2015–2016)", "Domestic Cricket — Vidarbha", "Experienced middle-order batsman", "Key member of Vidarbha's batting core", "Consistent domestic performer", "Known for building innings under pressure"]
+            sport: "Cricket", role: "Power Hitter",
+            iplTeam: "Mumbai Indians / KKR", domesticTeam: "Vidarbha", currentStatus: null,
+            bio: "An experienced domestic campaigner and powerful middle-order batsman. A key figure in Vidarbha's setup, known for his ability to change the game with explosive hitting and building innings under pressure.",
+            achievements: ["IPL — Mumbai Indians / KKR (2015–2016)", "Domestic Cricket — Vidarbha", "Experienced middle-order batsman", "Power-hitting ability in death overs", "Consistent domestic performer", "Known for building innings under pressure"],
+            stats: [
+                { label: "Matches", value: "—" },
+                { label: "Runs", value: "—" },
+                { label: "Strike Rate", value: "—" },
+                { label: "Highest", value: "—" }
+            ]
         }
     ];
 
@@ -314,7 +371,8 @@
 
     const trustedByBrands = [
         { name: "THE PITHS", type: "Cricket Academy" },
-        { name: "AERITHON SPORTS", type: "Cricket Equipment" }
+        { name: "AERITHON SPORTS", type: "Cricket Equipment" },
+        { name: "NFC", type: "Nagpur Fitness Club" }
     ];
 
     const workVideos = [
@@ -327,7 +385,7 @@
         document.getElementById('familyGrid').innerHTML = familyPlayers.map((p, i) => `
             <div class="player-card border border-white/10 overflow-hidden" onclick="openModal(${i})">
                 <div class="aspect-[3/4] overflow-hidden bg-neutral-900">
-                    <img src="${p.image}" alt="${p.name}" class="card-img w-full h-full object-cover object-center">
+                    <img src="${p.image}" alt="${p.name}" class="card-img w-full h-full object-cover object-center" onerror="this.style.display='none';this.parentElement.classList.add('flex','items-center','justify-center');this.parentElement.innerHTML='<span class=\\'font-bebas text-3xl text-white/15\\'>${p.name.split(' ').map(n=>n[0]).join('')}</span>';">
                 </div>
                 <div class="p-3 sm:p-5">
                     <h3 class="font-bebas text-lg sm:text-3xl tracking-tight leading-tight">${p.name}</h3>
@@ -343,7 +401,7 @@
 
     function renderTrustedBy() {
         const ac = trustedByPlayers.map(p => `
-            <div class="flex-shrink-0 w-[100px] sm:w-[130px] border border-white/8 overflow-hidden bg-neutral-950/50">
+            <div class="flex-shrink-0 w-[100px] sm:w-[130px] border border-white/10 overflow-hidden bg-neutral-950/50">
                 <div class="aspect-[3/4] overflow-hidden bg-neutral-900">
                     ${p.image ? `<img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover">` : `<div class="w-full h-full flex items-center justify-center"><span class="font-bebas text-xl text-white/15">${p.initials}</span></div>`}
                 </div>
@@ -357,7 +415,7 @@
         document.getElementById('athleteMarquee').innerHTML = ac + ac;
 
         const bc = trustedByBrands.map(b => `
-            <div class="flex-shrink-0 w-[120px] sm:w-[150px] border border-white/8 bg-neutral-950/50 px-2.5 py-2 sm:px-3 sm:py-2.5 flex items-center gap-2">
+            <div class="flex-shrink-0 w-[120px] sm:w-[150px] border border-white/10 bg-neutral-950/50 px-2.5 py-2 sm:px-3 sm:py-2.5 flex items-center gap-2">
                 <div class="w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 border border-white/10 flex items-center justify-center"><iconify-icon icon="lucide:building-2" width="13" class="text-white/25"></iconify-icon></div>
                 <div class="min-w-0">
                     <h4 class="font-bebas text-[11px] sm:text-sm tracking-tight leading-tight truncate">${b.name}</h4>
@@ -371,7 +429,7 @@
     function renderVideos() {
         document.getElementById('videoGrid').innerHTML = workVideos.map(v => `
             <div class="video-card border border-white/10 overflow-hidden">
-                <div style="background:#000;">
+                <div style="background:#000;" class="overflow-hidden">
                     <iframe src="https://www.instagram.com/reel/${v.reelId}/embed/" width="100%" height="480" class="sm:!h-[520px]" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy" style="display:block;max-width:100%;"></iframe>
                 </div>
                 <div class="p-3 sm:p-5 border-t border-white/10">
@@ -390,6 +448,20 @@
     function openModal(index) {
         const p = familyPlayers[index];
         if (!p) return;
+        const statsHTML = p.stats && p.stats.length > 0 ? `
+            <div class="border-t border-white/10 pt-4 mt-4 sm:mt-6">
+                <p class="text-[9px] sm:text-[10px] font-bold tracking-[0.2em] uppercase text-white/30 mb-3">Stats</p>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+                    ${p.stats.map(s => `
+                        <div class="text-center border border-white/10 py-3 sm:py-4 px-2">
+                            <p class="font-bebas text-2xl sm:text-4xl tracking-tight leading-none">${s.value}</p>
+                            <p class="text-[8px] sm:text-[10px] text-white/30 uppercase tracking-wider mt-1">${s.label}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        ` : '';
+
         document.getElementById('modalContent').innerHTML = `
             <div class="grid grid-cols-1 sm:grid-cols-2">
                 <div class="aspect-[3/4] sm:aspect-auto overflow-hidden bg-neutral-900 max-h-[38vh] sm:max-h-none">
@@ -409,6 +481,7 @@
                         <p class="text-[9px] sm:text-[10px] font-bold tracking-[0.2em] uppercase text-white/30 mb-3">Achievements</p>
                         <div class="space-y-2">${p.achievements.map(a => `<div class="flex items-start gap-2"><iconify-icon icon="lucide:check" width="11" class="text-white/30 mt-0.5 flex-shrink-0"></iconify-icon><p class="text-[11px] sm:text-sm text-white/60 leading-snug">${a}</p></div>`).join('')}</div>
                     </div>
+                    ${statsHTML}
                 </div>
             </div>`;
         document.getElementById('playerModal').classList.add('active');
@@ -423,8 +496,8 @@
         menuOpen = !menuOpen;
         const menu = document.getElementById('mobileMenu');
         const b1 = document.getElementById('bar1'), b2 = document.getElementById('bar2'), b3 = document.getElementById('bar3');
-        if (menuOpen) { menu.style.maxHeight = menu.scrollHeight + 'px'; b1.style.transform = 'rotate(45deg) translate(3px, 5px)'; b2.style.opacity = '0'; b3.style.transform = 'rotate(-45deg) translate(3px, -5px)'; b3.style.width = '1.5rem'; b3.style.marginRight = '0'; document.body.style.overflow = 'hidden'; }
-        else { menu.style.maxHeight = '0'; b1.style.transform = ''; b2.style.opacity = '1'; b3.style.transform = ''; b3.style.width = ''; b3.style.marginRight = ''; document.body.style.overflow = ''; }
+        if (menuOpen) { menu.style.maxHeight = menu.scrollHeight + 'px'; b1.style.transform = 'rotate(45deg) translate(3px, 5px)'; b2.style.opacity = '0'; b3.style.transform = 'rotate(-45deg) translate(3px, -5px)'; b3.style.width = '1.5rem'; document.body.style.overflow = 'hidden'; }
+        else { menu.style.maxHeight = '0'; b1.style.transform = ''; b2.style.opacity = '1'; b3.style.transform = ''; b3.style.width = ''; document.body.style.overflow = ''; }
     }
     function closeMenu() { if (menuOpen) toggleMenu(); }
 
