@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>PRO LIFT | Sports Media Agency</title>
-    <meta name="description" content="PRO LIFT — Sports Media Agency. Building athletes into brands through premium visual storytelling and strategic collaborations.">
+    <title>ProLift Sports | Athlete Management & Sports Media Agency India</title>
+    <meta name="description" content="ProLift Sports is a Nagpur-based athlete management and sports media agency representing India's premier cricketers. We build athlete brands through cinematic content, brand collaborations, and turnkey media production. No deal, no fee.">
+    <meta name="keywords" content="sports media agency India, athlete management Nagpur, cricket athlete branding, IPL athlete management, sports content creation India, brand collaborations cricket, ProLift Sports, Yash Thakur, Atharva Taide, Darshan Nalkande, Apoorv Wankhade, Vidarbha cricket">
+    <meta name="author" content="ProLift Sports">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://proliftt.github.io/prolift/">
     <link rel="icon" href="https://z-cdn-media.chatglm.cn/files/f91c8087-5dc1-4450-b335-873e4172d743.png?auth_key=1890930068-1e92cc0b5ae046c9ab1f708c357f9eac-0-9cf47af7dff051c4d1b90dbcbbe4766f" type="image/png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ProLift Sports | Athlete Management & Sports Media Agency">
+    <meta property="og:description" content="Building athlete brands. Creating legacies. India's premier sports media & athlete branding agency.">
+    <meta property="og:url" content="https://proliftt.github.io/prolift/">
+    <meta property="og:image" content="https://z-cdn-media.chatglm.cn/files/f91c8087-5dc1-4450-b335-873e4172d743.png?auth_key=1890930068-1e92cc0b5ae046c9ab1f708c357f9eac-0-9cf47af7dff051c4d1b90dbcbbe4766f">
+    <meta property="og:site_name" content="ProLift Sports">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ProLift Sports | Athlete Management & Sports Media Agency">
+    <meta name="twitter:description" content="Building athlete brands. Creating legacies. India's premier sports media & athlete branding agency.">
+    <meta name="twitter:image" content="https://z-cdn-media.chatglm.cn/files/f91c8087-5dc1-4450-b335-873e4172d743.png?auth_key=1890930068-1e92cc0b5ae046c9ab1f708c357f9eac-0-9cf47af7dff051c4d1b90dbcbbe4766f">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
@@ -22,64 +39,206 @@
         }
     </script>
     <style>
-        * { -webkit-tap-highlight-color: transparent; }
-        html, body { overflow-x: hidden; }
-        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; padding-top: env(safe-area-inset-top); }
+        * { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
+        html, body { overflow-x: hidden; width: 100%; }
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; padding-top: env(safe-area-inset-top); background: #000; }
         .font-bebas { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
+        ::selection { background: #fff; color: #000; }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.3); }
+
+        /* Nav links */
         .nav-link { position: relative; }
         .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: #fff; transition: width 0.3s ease; }
         .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+        /* Modal */
         .modal-overlay { opacity: 0; transition: opacity 0.3s ease; pointer-events: none; }
         .modal-overlay.active { opacity: 1; pointer-events: all; }
         .modal-body { transform: translateY(40px) scale(0.97); transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
         .modal-overlay.active .modal-body { transform: translateY(0) scale(1); }
+
+        /* Animations */
         @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(10px)} }
         .scroll-bounce { animation: bounce 2s infinite; }
         @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .fade-up { opacity: 0; }
-        .fade-up.visible { animation: fadeUp 0.7s ease forwards; }
-        .player-card { transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); cursor: pointer; }
-        .player-card:hover { border-color: #fff !important; transform: translateY(-6px); box-shadow: 0 20px 60px rgba(255,255,255,0.06); }
-        .player-card:hover .card-img { transform: scale(1.05); }
-        .card-img { transition: transform 0.6s ease; }
+        .fade-up.visible { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes fadeRight { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+        .fade-right.visible { animation: fadeRight 0.8s ease forwards; }
+
+        /* Reveal line effect */
+        @keyframes revealLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+        .reveal-line { transform-origin: left; transform: scaleX(0); }
+        .reveal-line.visible { animation: revealLine 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+        /* Player cards */
+        .player-card { transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); cursor: pointer; }
+        .player-card:hover { border-color: #fff !important; transform: translateY(-8px); box-shadow: 0 30px 80px rgba(255,255,255,0.08); }
+        .player-card:hover .card-img { transform: scale(1.08); }
+        .player-card:hover .card-arrow { transform: translate(4px, -4px); opacity: 1; }
+        .card-img { transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .card-arrow { transition: all 0.3s ease; opacity: 0.3; }
+
+        /* Video cards */
         .video-card { transition: all 0.35s ease; }
-        .video-card:hover { border-color: rgba(255,255,255,0.4) !important; }
+        .video-card:hover { border-color: rgba(255,255,255,0.4) !important; transform: translateY(-4px); }
+
+        /* Buttons */
         .ig-btn { transition: all 0.25s ease; min-height: 44px; display: inline-flex; align-items: center; }
         .ig-btn:active { transform: scale(0.95); }
+        .ig-btn:hover { background: #fff; color: #000; }
+        .ig-btn:hover .ig-arrow { transform: translateX(4px); }
+        .ig-arrow { transition: transform 0.3s ease; }
+
+        /* No scrollbar */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Grain texture */
         @keyframes grain { 0%,100%{transform:translate(0,0)} 10%{transform:translate(-5%,-10%)} 30%{transform:translate(3%,-15%)} 50%{transform:translate(12%,9%)} 70%{transform:translate(9%,4%)} 90%{transform:translate(-1%,7%)} }
         .grain::before { content: ''; position: absolute; inset: -50%; z-index: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); animation: grain 8s steps(10) infinite; pointer-events: none; }
+
+        /* Marquee */
         @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         .marquee-track { animation: marquee 30s linear infinite; }
         .marquee-track:hover { animation-play-state: paused; }
         .marquee-container { -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent); mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent); }
+
+        /* Big text marquee */
+        @keyframes bigMarquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .big-marquee-track { animation: bigMarquee 25s linear infinite; }
+
+        /* Founder cards */
         .founder-card { transition: all 0.3s ease; }
         .founder-card:active { transform: scale(0.97); }
-        .founder-card:hover { border-color: #fff !important; }
+        .founder-card:hover { border-color: #fff !important; transform: translateY(-4px); }
+
+        /* Hero text shadow */
+        .hero-text-shadow { text-shadow: 0 2px 12px rgba(0,0,0,0.85), 0 4px 40px rgba(0,0,0,0.6); }
+
+        /* FAQ */
+        .faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .faq-question { cursor: pointer; padding: 1.5rem 0; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: color 0.3s ease; }
+        .faq-question:hover { color: #fff; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), padding 0.5s ease; }
+        .faq-item.open .faq-answer { max-height: 600px; padding-bottom: 1.5rem; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .faq-icon { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); flex-shrink: 0; }
+
+        /* Stats counter */
+        .stat-box { transition: all 0.3s ease; }
+        .stat-box:hover { border-color: rgba(255,255,255,0.3) !important; background: rgba(255,255,255,0.03); }
+
+        /* Image constraints */
+        img { max-width: 100%; height: auto; }
+        iframe { max-width: 100%; }
+        .touch-target { min-height: 44px; min-width: 44px; }
+
+        /* Mobile padding */
         @media (max-width: 767px) { .mobile-bottom-pad { padding-bottom: calc(1rem + env(safe-area-inset-bottom)); } }
-        .hero-text-shadow {
-            text-shadow: 0 2px 12px rgba(0,0,0,0.85), 0 4px 40px rgba(0,0,0,0.6);
-        }
+
+        /* Section number style */
+        .section-num { font-size: 0.65rem; letter-spacing: 0.3em; font-weight: 600; }
+
+        /* Service card hover */
+        .service-card { transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: #fff; transform: scaleX(0); transform-origin: left; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-card:hover { background: rgba(255,255,255,0.02); }
+
+        /* Smooth reveal for big text */
+        .word-reveal { display: inline-block; overflow: hidden; }
+        .word-reveal span { display: inline-block; transform: translateY(100%); transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .word-reveal.visible span { transform: translateY(0); }
     </style>
+
+    <!-- Schema: SportsOrganization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsOrganization",
+      "name": "ProLift Sports",
+      "alternateName": "ProLift",
+      "url": "https://proliftt.github.io/prolift/",
+      "logo": "https://z-cdn-media.chatglm.cn/files/f91c8087-5dc1-4450-b335-873e4172d743.png",
+      "description": "Athlete management and sports media agency representing India's premier cricketers. Building athlete brands through cinematic content, brand collaborations, and turnkey media production.",
+      "email": "prolift.pvt@gmail.com",
+      "foundingDate": "2024",
+      "founders": [
+        { "@type": "Person", "name": "Arjun Gawre", "telephone": "+91 90282 41131" },
+        { "@type": "Person", "name": "Mayuresh Jumle", "telephone": "+91 83788 17364" }
+      ],
+      "sameAs": ["https://www.instagram.com/proliftsports_/", "https://proliftt.github.io/prolift/"],
+      "areaServed": ["India", "Maharashtra", "Nagpur", "United Kingdom"],
+      "sport": "Cricket",
+      "address": { "@type": "PostalAddress", "addressLocality": "Nagpur", "addressRegion": "Maharashtra", "addressCountry": "IN" }
+    }
+    </script>
+
+    <!-- Schema: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What does ProLift Sports do?", "acceptedAnswer": { "@type": "Answer", "text": "ProLift Sports is an athlete management and sports media agency based in Nagpur, India. We help athletes build personal brands, create premium cinematic content, manage social media, negotiate brand collaborations, and produce commercial shoots. We represent premier cricketers including Team India and IPL players." } },
+        { "@type": "Question", "name": "Where is ProLift Sports based?", "acceptedAnswer": { "@type": "Answer", "text": "ProLift Sports is based in Nagpur, Maharashtra, India. We work with athletes across India and have an international project called Vyom Sports in England, United Kingdom." } },
+        { "@type": "Question", "name": "Who are the athletes managed by ProLift Sports?", "acceptedAnswer": { "@type": "Answer", "text": "ProLift Sports manages Yash Thakur (Team India / Lucknow Super Giants), Atharva Taide (PBKS / SRH), Darshan Nalkande (Gujarat Titans), and Apoorv Wankhade (Vidarbha, former Mumbai Indians / KKR). We also work with trusted athletes like Aman Mokhade, Shrikant Wagh, Disha Kasat, and Saurabh Dubey." } },
+        { "@type": "Question", "name": "How much do ProLift content packages cost?", "acceptedAnswer": { "@type": "Answer", "text": "ProLift offers three content packages: Single Reel for starter evaluation, 4 Reels Package for monthly momentum, and 8 Reels Package for full-scale 360-degree athlete management and premium branding support. Contact us at prolift.pvt@gmail.com for custom pricing and package details." } },
+        { "@type": "Question", "name": "What is the ProLift No Deal No Fee model?", "acceptedAnswer": { "@type": "Answer", "text": "For brand deals and collaborations, ProLift operates on a No Deal, No Fee basis. There are no joining fees. We pitch you to brands, negotiate, and manage campaigns. We only earn when you earn. Our success is directly linked to yours." } },
+        { "@type": "Question", "name": "How can brands partner with ProLift athletes?", "acceptedAnswer": { "@type": "Answer", "text": "Brands can partner with ProLift athletes through brand ambassadorships, match and league campaigns, digital social content, events and appearances, and commercial shoots. We offer direct access to high-trust athletes with turnkey in-house production and guaranteed deliverables. Contact us at prolift.pvt@gmail.com." } },
+        { "@type": "Question", "name": "Does ProLift Sports work with athletes outside cricket?", "acceptedAnswer": { "@type": "Answer", "text": "While our primary roster is cricket-focused, ProLift Sports is equipped to work with athletes across sports including fitness, lifestyle, and youth culture. Our media production, branding, and social media management services apply to any sporting talent looking to build a professional brand." } },
+        { "@type": "Question", "name": "What is the Vyom Sports international project?", "acceptedAnswer": { "@type": "Answer", "text": "Vyom Sports is ProLift Sports' international project based in England, United Kingdom. It is a cross-border sports media bridge expanding our reach into England and Europe, facilitating bilateral sports media and global brand campaigns." } },
+        { "@type": "Question", "name": "How do I join ProLift as an athlete?", "acceptedAnswer": { "@type": "Answer", "text": "To join ProLift Sports, fill out the application form on our website at proliftt.github.io/prolift or contact us directly at prolift.pvt@gmail.com. You can also reach founders Arjun Gawre at +91 90282 41131 or Mayuresh Jumle at +91 83788 17364." } },
+        { "@type": "Question", "name": "What makes ProLift different from other sports agencies?", "acceptedAnswer": { "@type": "Answer", "text": "ProLift offers turnkey in-house production with zero agency friction. We handle scripting, athlete scheduling, shoots, and editing in-house. Our content is engineered for algorithmic performance with 3-second hooks, kinetic subtitles, and broadcast-grade sound and color. We guarantee deliverables with clear contractual terms and disciplined delivery timelines." } }
+      ]
+    }
+    </script>
+
+    <!-- Schema: Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Athlete Media Production and Brand Management",
+      "provider": { "@type": "SportsOrganization", "name": "ProLift Sports", "url": "https://proliftt.github.io/prolift/" },
+      "areaServed": "India",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Athlete Content Packages",
+        "itemListElement": [
+          { "@type": "Offer", "name": "Single Reel", "description": "One cinematic aesthetic reel with professional editing, sound design, and color grading." },
+          { "@type": "Offer", "name": "4 Reels Package", "description": "Four high-quality reels, five high-impact posts, content planning, captions, and posting guidance." },
+          { "@type": "Offer", "name": "8 Reels Package", "description": "Eight premium reels, ten high-impact posts, full content strategy, personal branding consultation, and structured content calendar." }
+        ]
+      }
+    }
+    </script>
 </head>
 <body class="bg-black text-white font-inter" style="overflow-x:hidden">
 
+    <!-- NAV -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-xl border-b border-white/10 transition-all duration-300" style="padding-top:env(safe-area-inset-top)">
         <div class="max-w-7xl mx-auto px-4 sm:px-8">
             <div class="flex items-center justify-between h-14 sm:h-20">
                 <a href="#home" class="flex-shrink-0">
-                    <img src="https://z-cdn-media.chatglm.cn/files/f91c8087-5dc1-4450-b335-873e4172d743.png?auth_key=1890930068-1e92cc0b5ae046c9ab1f708c357f9eac-0-9cf47af7dff051c4d1b90dbcbbe4766f" alt="PRO LIFT" class="h-8 sm:h-11 w-auto object-contain">
+                    <img src="https://z-cdn-media.chatglm.cn/files/f91c8087-5dc1-4450-b335-873e4172d743.png?auth_key=1890930068-1e92cc0b5ae046c9ab1f708c357f9eac-0-9cf47af7dff051c4d1b90dbcbbe4766f" alt="ProLift Sports Logo" class="h-8 sm:h-11 w-auto object-contain">
                 </a>
-                <div class="hidden md:flex items-center gap-7 lg:gap-9">
+                <div class="hidden md:flex items-center gap-6 lg:gap-8">
                     <a href="#home" class="nav-link text-xs font-semibold tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors">Home</a>
-                    <a href="#family" class="nav-link text-xs font-semibold tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors">The Family</a>
-                    <a href="#trusted" class="nav-link text-xs font-semibold tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors">Trusted By</a>
-                    <a href="#work" class="nav-link text-xs font-semibold tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors">Our Work</a>
-                    <a href="#model" class="nav-link text-xs font-semibold tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors">The Model</a>
+                    <a href="#about" class="nav-link text-xs font-semibold tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors">About</a>
+                    <a href="#family" class="nav-link text-xs font-semibold tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors">Family</a>
+                    <a href="#work" class="nav-link text-xs font-semibold tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors">Work</a>
+                    <a href="#services" class="nav-link text-xs font-semibold tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors">Services</a>
+                    <a href="#faq" class="nav-link text-xs font-semibold tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors">FAQ</a>
                     <a href="#join" class="text-xs font-semibold tracking-[0.15em] uppercase bg-white text-black px-5 py-2.5 hover:bg-white/90 transition-colors">Join Us</a>
                 </div>
-                <button class="md:hidden w-11 h-11 flex flex-col items-center justify-center -mr-1" onclick="toggleMenu()" aria-label="Menu">
+                <button class="md:hidden w-11 h-11 flex flex-col items-center justify-center -mr-1 touch-target" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false">
                     <span id="bar1" class="block w-6 h-[1.5px] bg-white transition-all duration-300 origin-center"></span>
                     <span id="bar2" class="block w-6 h-[1.5px] bg-white transition-all duration-300 mt-1.5"></span>
                     <span id="bar3" class="block w-6 h-[1.5px] bg-white transition-all duration-300 mt-1.5"></span>
@@ -89,30 +248,34 @@
         <div id="mobileMenu" class="md:hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-black/95 backdrop-blur-xl border-t border-white/10">
             <div class="px-4 pt-2 pb-6 flex flex-col gap-1">
                 <a href="#home" onclick="closeMenu()" class="text-sm font-semibold tracking-[0.12em] uppercase text-white/60 hover:text-white py-3 border-b border-white/5 transition-colors">Home</a>
+                <a href="#about" onclick="closeMenu()" class="text-sm font-semibold tracking-[0.12em] uppercase text-white/60 hover:text-white py-3 border-b border-white/5 transition-colors">About</a>
                 <a href="#family" onclick="closeMenu()" class="text-sm font-semibold tracking-[0.12em] uppercase text-white/60 hover:text-white py-3 border-b border-white/5 transition-colors">The Family</a>
                 <a href="#trusted" onclick="closeMenu()" class="text-sm font-semibold tracking-[0.12em] uppercase text-white/60 hover:text-white py-3 border-b border-white/5 transition-colors">Trusted By</a>
                 <a href="#work" onclick="closeMenu()" class="text-sm font-semibold tracking-[0.12em] uppercase text-white/60 hover:text-white py-3 border-b border-white/5 transition-colors">Our Work</a>
-                <a href="#model" onclick="closeMenu()" class="text-sm font-semibold tracking-[0.12em] uppercase text-white/60 hover:text-white py-3 border-b border-white/5 transition-colors">The Model</a>
+                <a href="#services" onclick="closeMenu()" class="text-sm font-semibold tracking-[0.12em] uppercase text-white/60 hover:text-white py-3 border-b border-white/5 transition-colors">Services</a>
+                <a href="#standards" onclick="closeMenu()" class="text-sm font-semibold tracking-[0.12em] uppercase text-white/60 hover:text-white py-3 border-b border-white/5 transition-colors">Standards</a>
+                <a href="#faq" onclick="closeMenu()" class="text-sm font-semibold tracking-[0.12em] uppercase text-white/60 hover:text-white py-3 border-b border-white/5 transition-colors">FAQ</a>
                 <a href="#join" onclick="closeMenu()" class="mt-3 text-sm font-bold tracking-[0.12em] uppercase bg-white text-black py-3.5 text-center hover:bg-white/90 transition-colors">Join Us</a>
             </div>
         </div>
     </nav>
 
+    <!-- HERO -->
     <section id="home" class="relative min-h-[100svh] flex flex-col items-center justify-center overflow-hidden grain">
         <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="https://z-cdn-media.chatglm.cn/files/f91c8087-5dc1-4450-b335-873e4172d743.png?auth_key=1890930068-1e92cc0b5ae046c9ab1f708c357f9eac-0-9cf47af7dff051c4d1b90dbcbbe4766f" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
-            <source src="https://videotourl.com/videos/1790928866733-b5535e6f-2f19-46d3-ae54-b7ecc062cb96.mp4" type="video/mp4">
+            <source src="hero-video.mp4" type="video/mp4">
         </video>
         <div class="absolute inset-0 bg-black/65 z-[1]"></div>
         <div class="absolute inset-0 z-[2]" style="background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 40%, transparent 60%, rgba(0,0,0,0.8) 100%);"></div>
 
-        <div class="relative z-10 text-center px-5 pt-14">
-            <div class="fade-up mb-6 sm:mb-8">
-                <img src="https://z-cdn-media.chatglm.cn/files/f91c8087-5dc1-4450-b335-873e4172d743.png?auth_key=1890930068-1e92cc0b5ae046c9ab1f708c357f9eac-0-9cf47af7dff051c4d1b90dbcbbe4766f" alt="PRO LIFT" class="h-24 sm:h-28 md:h-36 mx-auto object-contain">
+        <div class="relative z-10 text-center px-5 pt-14 max-w-5xl w-full">
+            <div class="fade-up mb-5 sm:mb-8">
+                <img src="https://z-cdn-media.chatglm.cn/files/f91c8087-5dc1-4450-b335-873e4172d743.png?auth_key=1890930068-1e92cc0b5ae046c9ab1f708c357f9eac-0-9cf47af7dff051c4d1b90dbcbbe4766f" alt="ProLift Sports" class="h-16 sm:h-24 md:h-32 mx-auto object-contain">
             </div>
-            <p class="fade-up hero-text-shadow text-[10px] sm:text-sm font-semibold tracking-[0.3em] uppercase text-white/40 mb-4 sm:mb-6" style="animation-delay:0.15s">Sports Media Agency</p>
-            <h1 class="fade-up hero-text-shadow font-bebas text-[3.2rem] sm:text-7xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight text-white" style="animation-delay:0.3s">YOU FOCUS ON<br>YOUR GAME.</h1>
-            <h1 class="fade-up hero-text-shadow font-bebas text-[3.2rem] sm:text-7xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight text-white/30 mt-0.5 sm:mt-1" style="animation-delay:0.45s">WE FOCUS ON<br>YOUR BRAND.</h1>
-            <p class="fade-up hero-text-shadow mt-6 sm:mt-10 text-xs sm:text-base text-white/40 max-w-sm sm:max-w-md mx-auto leading-relaxed px-2" style="animation-delay:0.6s">Building athletes into brands through premium visual storytelling and strategic collaborations.</p>
+            <p class="fade-up hero-text-shadow text-[9px] sm:text-xs font-semibold tracking-[0.35em] uppercase text-white/40 mb-4 sm:mb-6" style="animation-delay:0.15s">Sports Media Agency &middot; Nagpur &middot; India</p>
+            <h1 class="fade-up hero-text-shadow font-bebas text-[2.5rem] sm:text-7xl md:text-8xl lg:text-[9rem] leading-[0.85] tracking-tight text-white" style="animation-delay:0.3s">YOU FOCUS ON<br>YOUR GAME.</h1>
+            <h1 class="fade-up hero-text-shadow font-bebas text-[2.5rem] sm:text-7xl md:text-8xl lg:text-[9rem] leading-[0.85] tracking-tight text-white/30 mt-1 sm:mt-2" style="animation-delay:0.45s">WE FOCUS ON<br>YOUR BRAND.</h1>
+            <p class="fade-up hero-text-shadow mt-5 sm:mt-8 text-[11px] sm:text-base text-white/50 max-w-xs sm:max-w-md mx-auto leading-relaxed px-2" style="animation-delay:0.6s">Building athletes into brands through premium visual storytelling, strategic collaborations, and turnkey media production.</p>
         </div>
         <div class="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 scroll-bounce z-10">
             <div class="flex flex-col items-center gap-1.5 text-white/30">
@@ -122,23 +285,106 @@
         </div>
     </section>
 
+    <!-- BIG TEXT MARQUEE -->
+    <div class="relative overflow-hidden border-y border-white/10 py-3 sm:py-5 bg-black">
+        <div class="big-marquee-track flex w-max">
+            <div class="flex items-center gap-6 sm:gap-10 px-5">
+                <span class="font-bebas text-2xl sm:text-4xl text-white/80 tracking-tight whitespace-nowrap">ATHLETE BRANDING</span>
+                <span class="text-white/20 text-xl">&middot;</span>
+                <span class="font-bebas text-2xl sm:text-4xl text-white/20 tracking-tight whitespace-nowrap">CINEMATIC CONTENT</span>
+                <span class="text-white/20 text-xl">&middot;</span>
+                <span class="font-bebas text-2xl sm:text-4xl text-white/80 tracking-tight whitespace-nowrap">BRAND DEALS</span>
+                <span class="text-white/20 text-xl">&middot;</span>
+                <span class="font-bebas text-2xl sm:text-4xl text-white/20 tracking-tight whitespace-nowrap">SPORTS MEDIA</span>
+                <span class="text-white/20 text-xl">&middot;</span>
+                <span class="font-bebas text-2xl sm:text-4xl text-white/80 tracking-tight whitespace-nowrap">NO DEAL NO FEE</span>
+                <span class="text-white/20 text-xl">&middot;</span>
+            </div>
+            <div class="flex items-center gap-6 sm:gap-10 px-5">
+                <span class="font-bebas text-2xl sm:text-4xl text-white/80 tracking-tight whitespace-nowrap">ATHLETE BRANDING</span>
+                <span class="text-white/20 text-xl">&middot;</span>
+                <span class="font-bebas text-2xl sm:text-4xl text-white/20 tracking-tight whitespace-nowrap">CINEMATIC CONTENT</span>
+                <span class="text-white/20 text-xl">&middot;</span>
+                <span class="font-bebas text-2xl sm:text-4xl text-white/80 tracking-tight whitespace-nowrap">BRAND DEALS</span>
+                <span class="text-white/20 text-xl">&middot;</span>
+                <span class="font-bebas text-2xl sm:text-4xl text-white/20 tracking-tight whitespace-nowrap">SPORTS MEDIA</span>
+                <span class="text-white/20 text-xl">&middot;</span>
+                <span class="font-bebas text-2xl sm:text-4xl text-white/80 tracking-tight whitespace-nowrap">NO DEAL NO FEE</span>
+                <span class="text-white/20 text-xl">&middot;</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about" class="relative py-16 sm:py-32 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 mb-12 sm:mb-20">
+                <div class="lg:col-span-4 fade-right">
+                    <span class="section-num uppercase text-white/30 block mb-3">About ProLift</span>
+                    <h2 class="font-bebas text-4xl sm:text-6xl md:text-7xl tracking-tight leading-[0.9]">WHO<br>WE ARE</h2>
+                </div>
+                <div class="lg:col-span-8 fade-up">
+                    <p class="text-base sm:text-2xl text-white/80 leading-relaxed mb-4 sm:mb-6 font-light">We are an <strong class="text-white font-semibold">athlete management and sports media company</strong> that bridges India's premier sporting talent with visionary brand partners.</p>
+                    <p class="text-xs sm:text-base text-white/50 leading-relaxed mb-4">Based in Nagpur, Maharashtra, ProLift Sports helps athletes build their personal brand, strengthen their digital presence, and connect with commercial opportunities through strategic content, media management, and brand partnerships.</p>
+                    <p class="text-xs sm:text-base text-white/50 leading-relaxed">From commercial ad shoots to cinematic match-day reels and documentaries, our in-house media team delivers broadcast-grade assets ready for distribution. We do not charge joining fees. We only earn when you earn.</p>
+                </div>
+            </div>
+
+            <!-- Manifesto statement -->
+            <div class="fade-up border-t border-white/10 pt-10 sm:pt-16">
+                <p class="font-bebas text-2xl sm:text-4xl md:text-5xl tracking-tight leading-[1.1] text-white/40 max-w-4xl">
+                    <span class="text-white">We don't just create content.</span><br>
+                    We build stories that inspire, connect,<br>
+                    and leave an enduring legacy.
+                </p>
+            </div>
+
+            <!-- Service pillars -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 mt-10 sm:mt-16">
+                <div class="service-card bg-black p-5 sm:p-8">
+                    <iconify-icon icon="lucide:users" width="24" class="text-white/30 mb-3 sm:mb-4 block"></iconify-icon>
+                    <p class="font-bebas text-lg sm:text-2xl tracking-tight">Athlete Management</p>
+                    <p class="text-[10px] sm:text-xs text-white/40 mt-1 sm:mt-2 leading-relaxed">Personal branding, representation, career branding, digital identity.</p>
+                </div>
+                <div class="service-card bg-black p-5 sm:p-8">
+                    <iconify-icon icon="lucide:handshake" width="24" class="text-white/30 mb-3 sm:mb-4 block"></iconify-icon>
+                    <p class="font-bebas text-lg sm:text-2xl tracking-tight">Brand Collaborations</p>
+                    <p class="text-[10px] sm:text-xs text-white/40 mt-1 sm:mt-2 leading-relaxed">Partnerships, campaigns, commercial shoots, ambassador contracts.</p>
+                </div>
+                <div class="service-card bg-black p-5 sm:p-8">
+                    <iconify-icon icon="lucide:video" width="24" class="text-white/30 mb-3 sm:mb-4 block"></iconify-icon>
+                    <p class="font-bebas text-lg sm:text-2xl tracking-tight">Sports Media</p>
+                    <p class="text-[10px] sm:text-xs text-white/40 mt-1 sm:mt-2 leading-relaxed">Premium content, photography, cinematic reels, documentaries.</p>
+                </div>
+                <div class="service-card bg-black p-5 sm:p-8">
+                    <iconify-icon icon="lucide:globe" width="24" class="text-white/30 mb-3 sm:mb-4 block"></iconify-icon>
+                    <p class="font-bebas text-lg sm:text-2xl tracking-tight">International Reach</p>
+                    <p class="text-[10px] sm:text-xs text-white/40 mt-1 sm:mt-2 leading-relaxed">Vyom Sports UK bridge for bilateral sports media and global campaigns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE FAMILY -->
     <section id="family" class="relative py-16 sm:py-32 px-4 sm:px-8 border-t border-white/10">
         <div class="max-w-7xl mx-auto">
-            <div class="fade-up mb-10 sm:mb-20">
-                <span class="text-[10px] sm:text-xs font-semibold tracking-[0.3em] uppercase text-white/30">01</span>
-                <h2 class="font-bebas text-4xl sm:text-7xl md:text-8xl tracking-tight mt-1 sm:mt-2">THE FAMILY</h2>
-                <p class="mt-3 sm:mt-4 text-xs sm:text-sm text-white/40 max-w-md leading-relaxed">Athletes we manage. Tap to view their profile.</p>
+            <div class="fade-up mb-10 sm:mb-16 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+                <div>
+                    <span class="section-num uppercase text-white/30 block mb-2">01 / The Roster</span>
+                    <h2 class="font-bebas text-4xl sm:text-7xl md:text-8xl tracking-tight leading-[0.9]">THE FAMILY</h2>
+                </div>
+                <p class="text-xs sm:text-sm text-white/40 max-w-xs leading-relaxed">Athletes we manage. Tap any card to view their full profile and career stats.</p>
             </div>
             <div id="familyGrid" class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6"></div>
         </div>
     </section>
 
-    <section id="trusted" class="relative py-14 sm:py-28 border-t border-white/10 overflow-hidden">
+    <!-- TRUSTED BY -->
+    <section id="trusted" class="relative py-14 sm:py-24 border-t border-white/10 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-8 mb-8 sm:mb-12">
             <div class="fade-up">
-                <span class="text-[10px] sm:text-xs font-semibold tracking-[0.3em] uppercase text-white/30">02</span>
-                <h2 class="font-bebas text-4xl sm:text-7xl md:text-8xl tracking-tight mt-1 sm:mt-2">TRUSTED BY</h2>
-                <p class="mt-3 sm:mt-4 text-xs sm:text-sm text-white/40 max-w-md leading-relaxed">Athletes and brands who've trusted us.</p>
+                <span class="section-num uppercase text-white/30 block mb-2">02 / Trust Signals</span>
+                <h2 class="font-bebas text-4xl sm:text-7xl md:text-8xl tracking-tight leading-[0.9]">TRUSTED BY</h2>
             </div>
         </div>
         <div class="fade-up mb-6 sm:mb-10">
@@ -163,145 +409,375 @@
         </div>
     </section>
 
+    <!-- OUR WORK -->
     <section id="work" class="relative py-16 sm:py-32 px-4 sm:px-8 border-t border-white/10">
         <div class="max-w-7xl mx-auto">
-            <div class="fade-up mb-10 sm:mb-20">
-                <span class="text-[10px] sm:text-xs font-semibold tracking-[0.3em] uppercase text-white/30">03</span>
-                <h2 class="font-bebas text-4xl sm:text-7xl md:text-8xl tracking-tight mt-1 sm:mt-2">OUR WORK</h2>
-                <p class="mt-3 sm:mt-4 text-xs sm:text-sm text-white/40 max-w-md leading-relaxed">Our latest creations. Reels play inline.</p>
+            <div class="fade-up mb-10 sm:mb-16 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+                <div>
+                    <span class="section-num uppercase text-white/30 block mb-2">03 / Portfolio</span>
+                    <h2 class="font-bebas text-4xl sm:text-7xl md:text-8xl tracking-tight leading-[0.9]">OUR WORK</h2>
+                </div>
+                <p class="text-xs sm:text-sm text-white/40 max-w-xs leading-relaxed">Our latest creations. Reels play inline below.</p>
             </div>
             <div id="videoGrid" class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6"></div>
         </div>
     </section>
 
-    <section id="model" class="relative py-16 sm:py-32 px-4 sm:px-8 border-t border-white/10">
+    <!-- SERVICES (NO PRICES) -->
+    <section id="services" class="relative py-16 sm:py-32 px-4 sm:px-8 border-t border-white/10">
         <div class="max-w-7xl mx-auto">
-            <div class="fade-up mb-10 sm:mb-20">
-                <span class="text-[10px] sm:text-xs font-semibold tracking-[0.3em] uppercase text-white/30">04</span>
-                <h2 class="font-bebas text-4xl sm:text-7xl md:text-8xl tracking-tight mt-1 sm:mt-2">THE MODEL</h2>
-                <p class="mt-3 sm:mt-4 text-xs sm:text-sm text-white/40 max-w-md leading-relaxed">How we work. No joining fees. We only earn when you earn.</p>
+            <div class="fade-up mb-10 sm:mb-16 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+                <div>
+                    <span class="section-num uppercase text-white/30 block mb-2">04 / What We Do</span>
+                    <h2 class="font-bebas text-4xl sm:text-7xl md:text-8xl tracking-tight leading-[0.9]">SERVICES</h2>
+                </div>
+                <p class="text-xs sm:text-sm text-white/40 max-w-xs leading-relaxed">Turnkey short-form video production, personal branding, and social growth architecture. No joining fees. We only earn when you earn.</p>
             </div>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-px bg-white/10">
-                <div class="fade-up bg-black p-5 sm:p-10 hover:bg-white/5 transition-colors duration-500">
-                    <div class="flex items-center gap-3 mb-4 sm:mb-6"><div class="w-9 h-9 sm:w-10 sm:h-10 border border-white/20 flex items-center justify-center"><iconify-icon icon="lucide:video" width="16" class="text-white/60"></iconify-icon></div><span class="text-[10px] font-bold tracking-[0.2em] uppercase text-white/40">01</span></div>
-                    <h3 class="font-bebas text-2xl sm:text-4xl tracking-tight mb-3 sm:mb-4">CONTENT CREATION</h3>
-                    <p class="text-xs sm:text-sm text-white/40 leading-relaxed mb-4 sm:mb-6">Premium reels and content packages for your digital presence.</p>
-                    <div class="space-y-2.5 sm:space-y-3">
-                        <div class="flex items-start gap-2.5"><span class="text-white/20 mt-0.5">—</span><div><p class="text-xs sm:text-sm font-semibold">Single Reel</p><p class="text-[11px] sm:text-xs text-white/30">Cinematic edit, sound design, color grade</p></div></div>
-                        <div class="flex items-start gap-2.5"><span class="text-white/20 mt-0.5">—</span><div><p class="text-xs sm:text-sm font-semibold">4 Reels Package</p><p class="text-[11px] sm:text-xs text-white/30">Content planning, captions, posting guidance</p></div></div>
-                        <div class="flex items-start gap-2.5"><span class="text-white/20 mt-0.5">—</span><div><p class="text-xs sm:text-sm font-semibold">8 Reels Package</p><p class="text-[11px] sm:text-xs text-white/30">Full strategy, branding, monthly calendar</p></div></div>
+
+            <!-- Content Packages (no prices) -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 mb-10 sm:mb-16">
+                <div class="fade-up bg-black border border-white/10 p-5 sm:p-8 flex flex-col">
+                    <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-white/30 mb-2">Entry &middot; Trial</p>
+                    <h3 class="font-bebas text-2xl sm:text-4xl tracking-tight">SINGLE REEL</h3>
+                    <p class="text-[10px] sm:text-xs text-white/30 mb-5 sm:mb-6">one-time starter</p>
+                    <div class="space-y-2.5 sm:space-y-3 flex-grow">
+                        <div class="flex items-start gap-2"><iconify-icon icon="lucide:check" width="14" class="text-white/40 mt-0.5 flex-shrink-0"></iconify-icon><p class="text-[11px] sm:text-xs text-white/60">1 Cinematic / Aesthetic Reel (9:16 vertical)</p></div>
+                        <div class="flex items-start gap-2"><iconify-icon icon="lucide:check" width="14" class="text-white/40 mt-0.5 flex-shrink-0"></iconify-icon><p class="text-[11px] sm:text-xs text-white/60">Professional editing with dynamic transitions</p></div>
+                        <div class="flex items-start gap-2"><iconify-icon icon="lucide:check" width="14" class="text-white/40 mt-0.5 flex-shrink-0"></iconify-icon><p class="text-[11px] sm:text-xs text-white/60">Sound design &amp; color grading</p></div>
+                        <div class="flex items-start gap-2"><iconify-icon icon="lucide:check" width="14" class="text-white/40 mt-0.5 flex-shrink-0"></iconify-icon><p class="text-[11px] sm:text-xs text-white/60">Broadcast-grade master for Reels &amp; YouTube</p></div>
                     </div>
+                    <p class="text-[10px] text-white/30 mt-5 pt-4 border-t border-white/10">Test ProLift's broadcast production quality.</p>
                 </div>
-                <div class="fade-up bg-black p-5 sm:p-10 hover:bg-white/5 transition-colors duration-500">
-                    <div class="flex items-center gap-3 mb-4 sm:mb-6"><div class="w-9 h-9 sm:w-10 sm:h-10 border border-white/20 flex items-center justify-center"><iconify-icon icon="lucide:handshake" width="16" class="text-white/60"></iconify-icon></div><span class="text-[10px] font-bold tracking-[0.2em] uppercase text-white/40">02</span></div>
-                    <h3 class="font-bebas text-2xl sm:text-4xl tracking-tight mb-3 sm:mb-4">BRAND DEALS</h3>
-                    <p class="text-xs sm:text-sm text-white/40 leading-relaxed mb-4 sm:mb-6">We pitch, negotiate, and manage brand collaborations.</p>
-                    <div class="space-y-2.5 sm:space-y-3">
-                        <div class="flex items-start gap-2.5"><iconify-icon icon="lucide:check" width="13" class="text-white/40 mt-0.5 flex-shrink-0"></iconify-icon><p class="text-xs sm:text-sm text-white/50">We pitch you to relevant brands</p></div>
-                        <div class="flex items-start gap-2.5"><iconify-icon icon="lucide:check" width="13" class="text-white/40 mt-0.5 flex-shrink-0"></iconify-icon><p class="text-xs sm:text-sm text-white/50">Full negotiation & communication</p></div>
-                        <div class="flex items-start gap-2.5"><iconify-icon icon="lucide:check" width="13" class="text-white/40 mt-0.5 flex-shrink-0"></iconify-icon><p class="text-xs sm:text-sm text-white/50">Campaign coordination</p></div>
-                        <div class="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-white/10">
-                            <p class="text-[10px] text-white/30 uppercase tracking-wider mb-1.5">Our Promise</p>
-                            <p class="font-bebas text-2xl sm:text-3xl text-white leading-tight">NO DEAL, NO FEE.</p>
-                            <p class="text-[11px] sm:text-xs text-white/30 mt-1.5">We only earn when you earn.</p>
-                        </div>
+
+                <div class="fade-up bg-black border border-white/20 p-5 sm:p-8 flex flex-col relative">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-black px-3 py-1 text-[9px] font-bold tracking-[0.2em] uppercase">Most Popular</div>
+                    <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-white/30 mb-2">Monthly Momentum</p>
+                    <h3 class="font-bebas text-2xl sm:text-4xl tracking-tight">4 REELS PACKAGE</h3>
+                    <p class="text-[10px] sm:text-xs text-white/30 mb-5 sm:mb-6">consistent weekly touchpoints</p>
+                    <div class="space-y-2.5 sm:space-y-3 flex-grow">
+                        <div class="flex items-start gap-2"><iconify-icon icon="lucide:check" width="14" class="text-white/40 mt-0.5 flex-shrink-0"></iconify-icon><p class="text-[11px] sm:text-xs text-white/60">4 High-Quality Reels (matchday, nets, aesthetic)</p></div>
+                        <div class="flex items-start gap-2"><iconify-icon icon="lucide:check" width="14" class="text-white/40 mt-0.5 flex-shrink-0"></iconify-icon><p class="text-[11px] sm:text-xs text-white/60">5 High-Impact Posts (milestones, graphics, quotes)</p></div>
+                        <div class="flex items-start gap-2"><iconify-icon icon="lucide:check" width="14" class="text-white/40 mt-0.5 flex-shrink-0"></iconify-icon><p class="text-[11px] sm:text-xs text-white/60">Content planning aligned with match fixtures</p></div>
+                        <div class="flex items-start gap-2"><iconify-icon icon="lucide:check" width="14" class="text-white/40 mt-0.5 flex-shrink-0"></iconify-icon><p class="text-[11px] sm:text-xs text-white/60">Captions, posting guidance, peak-hour scheduling</p></div>
+                        <div class="flex items-start gap-2"><iconify-icon icon="lucide:check" width="14" class="text-white/40 mt-0.5 flex-shrink-0"></iconify-icon><p class="text-[11px] sm:text-xs text-white/60">Professional color &amp; audio with custom SFX</p></div>
                     </div>
+                    <p class="text-[10px] text-white/30 mt-5 pt-4 border-t border-white/10">Build algorithmic reach and follower loyalty.</p>
                 </div>
-                <div class="fade-up bg-black p-5 sm:p-10 hover:bg-white/5 transition-colors duration-500">
-                    <div class="flex items-center gap-3 mb-4 sm:mb-6"><div class="w-9 h-9 sm:w-10 sm:h-10 border border-white/20 flex items-center justify-center"><iconify-icon icon="lucide:camera" width="16" class="text-white/60"></iconify-icon></div><span class="text-[10px] font-bold tracking-[0.2em] uppercase text-white/40">03</span></div>
-                    <h3 class="font-bebas text-2xl sm:text-4xl tracking-tight mb-3 sm:mb-4">PRODUCTION</h3>
-                    <p class="text-xs sm:text-sm text-white/40 leading-relaxed mb-4 sm:mb-6">Two tiers of production for any campaign.</p>
-                    <div class="space-y-4 sm:space-y-5">
-                        <div><p class="text-xs sm:text-sm font-semibold mb-1">Standard Shoot</p><p class="text-[11px] sm:text-xs text-white/30 leading-relaxed">Training, gym, lifestyle, matchday BTS.</p></div>
-                        <div class="border-t border-white/10 pt-4"><p class="text-xs sm:text-sm font-semibold mb-1">Premium Commercial</p><p class="text-[11px] sm:text-xs text-white/30 leading-relaxed">Cinema cameras, pro cinematographers, advanced lighting, drone shots.</p></div>
-                        <div class="border-t border-white/10 pt-4"><p class="text-[10px] text-white/30 uppercase tracking-wider mb-1">How It Works</p><p class="text-xs sm:text-sm text-white/50">Inform us 1–2 days before any session. We plan, shoot, and deliver multiple pieces from one session.</p></div>
+
+                <div class="fade-up bg-black border border-white/10 p-5 sm:p-8 flex flex-col">
+                    <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-white/30 mb-2">Full-Scale 360&deg; Management</p>
+                    <h3 class="font-bebas text-2xl sm:text-4xl tracking-tight">8 REELS PACKAGE</h3>
+                    <p class="text-[10px] sm:text-xs text-white/30 mb-5 sm:mb-6">premium tier &middot; elite athletes</p>
+                    <div class="space-y-2.5 sm:space-y-3 flex-grow">
+                        <div class="flex items-start gap-2"><iconify-icon icon="lucide:check" width="14" class="text-white/40 mt-0.5 flex-shrink-0"></iconify-icon><p class="text-[11px] sm:text-xs text-white/60">8 Premium Reels (docu-series, hype cuts, training)</p></div>
+                        <div class="flex items-start gap-2"><iconify-icon icon="lucide:check" width="14" class="text-white/40 mt-0.5 flex-shrink-0"></iconify-icon><p class="text-[11px] sm:text-xs text-white/60">10 High-Impact Posts (identity graphics, carousels)</p></div>
+                        <div class="flex items-start gap-2"><iconify-icon icon="lucide:check" width="14" class="text-white/40 mt-0.5 flex-shrink-0"></iconify-icon><p class="text-[11px] sm:text-xs text-white/60">Content strategy across tournament &amp; off-season</p></div>
+                        <div class="flex items-start gap-2"><iconify-icon icon="lucide:check" width="14" class="text-white/40 mt-0.5 flex-shrink-0"></iconify-icon><p class="text-[11px] sm:text-xs text-white/60">Personal branding consultation for sponsor appeal</p></div>
+                        <div class="flex items-start gap-2"><iconify-icon icon="lucide:check" width="14" class="text-white/40 mt-0.5 flex-shrink-0"></iconify-icon><p class="text-[11px] sm:text-xs text-white/60">Structured content calendar with guaranteed rhythm</p></div>
+                        <div class="flex items-start gap-2"><iconify-icon icon="lucide:check" width="14" class="text-white/40 mt-0.5 flex-shrink-0"></iconify-icon><p class="text-[11px] sm:text-xs text-white/60">Story content suggestions &amp; priority turnaround</p></div>
                     </div>
+                    <p class="text-[10px] text-white/30 mt-5 pt-4 border-t border-white/10">Built for Ranji, IPL, and national-level athletes.</p>
                 </div>
             </div>
-            <div class="fade-up mt-10 sm:mt-16 text-center">
-                <p class="font-bebas text-2xl sm:text-4xl tracking-tight text-white/60">Our success is directly linked to yours.</p>
+
+            <!-- Full Service Ecosystem -->
+            <div class="fade-up">
+                <div class="flex items-center gap-3 mb-6 sm:mb-8">
+                    <div class="h-px flex-1 bg-white/10"></div>
+                    <span class="text-[9px] sm:text-[10px] font-bold tracking-[0.25em] uppercase text-white/25">Complete Service Ecosystem</span>
+                    <div class="h-px flex-1 bg-white/10"></div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10">
+                    <div class="service-card bg-black p-5 sm:p-6">
+                        <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-white/30 mb-2">01 / Talent Management</p>
+                        <h4 class="font-bebas text-xl sm:text-2xl tracking-tight mb-2">Athlete Management</h4>
+                        <p class="text-[11px] sm:text-xs text-white/40 leading-relaxed">Personal branding, athlete representation, career branding, digital identity, commercial rights advisory.</p>
+                    </div>
+                    <div class="service-card bg-black p-5 sm:p-6">
+                        <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-white/30 mb-2">02 / Brand Strategy</p>
+                        <h4 class="font-bebas text-xl sm:text-2xl tracking-tight mb-2">Brand Collaborations</h4>
+                        <p class="text-[11px] sm:text-xs text-white/40 leading-relaxed">Brand partnerships, campaign management, commercial shoots, athlete marketing, ambassador contracts.</p>
+                    </div>
+                    <div class="service-card bg-black p-5 sm:p-6">
+                        <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-white/30 mb-2">03 / In-House Studio</p>
+                        <h4 class="font-bebas text-xl sm:text-2xl tracking-tight mb-2">Sports Media</h4>
+                        <p class="text-[11px] sm:text-xs text-white/40 leading-relaxed">Premium content creation, photography, cinematic reels, documentary content, behind-the-scenes access.</p>
+                    </div>
+                    <div class="service-card bg-black p-5 sm:p-6">
+                        <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-white/30 mb-2">04 / Digital Reach</p>
+                        <h4 class="font-bebas text-xl sm:text-2xl tracking-tight mb-2">Social Media Management</h4>
+                        <p class="text-[11px] sm:text-xs text-white/40 leading-relaxed">Content strategy, account management, growth strategy, analytics &amp; insights, audience optimization.</p>
+                    </div>
+                    <div class="service-card bg-black p-5 sm:p-6">
+                        <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-white/30 mb-2">05 / Live Activations</p>
+                        <h4 class="font-bebas text-xl sm:text-2xl tracking-tight mb-2">Sports Event Coverage</h4>
+                        <p class="text-[11px] sm:text-xs text-white/40 leading-relaxed">Tournament coverage, team media management, match-day content, event films, press media packaging.</p>
+                    </div>
+                    <div class="service-card bg-black p-5 sm:p-6">
+                        <p class="text-[9px] font-bold tracking-[0.2em] uppercase text-white/30 mb-2">06 / Brand Promise</p>
+                        <h4 class="font-bebas text-xl sm:text-2xl tracking-tight mb-2">No Deal, No Fee</h4>
+                        <p class="text-[11px] sm:text-xs text-white/40 leading-relaxed">For brand deals: we pitch, negotiate, and manage. We only earn when you earn. Our success is directly linked to yours.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- PRODUCTION STANDARDS -->
+    <section id="standards" class="relative py-16 sm:py-32 px-4 sm:px-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="fade-up mb-10 sm:mb-16 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+                <div>
+                    <span class="section-num uppercase text-white/30 block mb-2">05 / The Standard</span>
+                    <h2 class="font-bebas text-4xl sm:text-7xl md:text-8xl tracking-tight leading-[0.9]">PRODUCTION<br>STANDARDS</h2>
+                </div>
+                <p class="text-xs sm:text-sm text-white/40 max-w-xs leading-relaxed">We engineer emotional human stories and broadcast-grade digital assets that build lasting athletic equity.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/10">
+                <div class="fade-up bg-black p-5 sm:p-8 service-card">
+                    <div class="flex items-center gap-3 mb-3 sm:mb-4">
+                        <span class="font-bebas text-3xl sm:text-4xl text-white/20">01</span>
+                        <iconify-icon icon="lucide:volume-2" width="18" class="text-white/40"></iconify-icon>
+                    </div>
+                    <h3 class="font-bebas text-xl sm:text-3xl tracking-tight mb-2 sm:mb-3">Broadcast-Grade Sound &amp; Color</h3>
+                    <p class="text-[11px] sm:text-sm text-white/50 leading-relaxed mb-3">Dynamic audio mixing featuring realistic foley bat impacts, crowd atmosphere, rhythmic bass cuts, and cinematic LUT color grading tailored to stadium lighting.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[9px] sm:text-[10px] border border-white/15 px-2 py-1 text-white/40 uppercase tracking-wider">Foley Sound</span>
+                        <span class="text-[9px] sm:text-[10px] border border-white/15 px-2 py-1 text-white/40 uppercase tracking-wider">Cinematic LUTs</span>
+                        <span class="text-[9px] sm:text-[10px] border border-white/15 px-2 py-1 text-white/40 uppercase tracking-wider">4K / 60fps</span>
+                    </div>
+                </div>
+                <div class="fade-up bg-black p-5 sm:p-8 service-card">
+                    <div class="flex items-center gap-3 mb-3 sm:mb-4">
+                        <span class="font-bebas text-3xl sm:text-4xl text-white/20">02</span>
+                        <iconify-icon icon="lucide:trending-up" width="18" class="text-white/40"></iconify-icon>
+                    </div>
+                    <h3 class="font-bebas text-xl sm:text-3xl tracking-tight mb-2 sm:mb-3">Algorithmic Video Architecture</h3>
+                    <p class="text-[11px] sm:text-sm text-white/50 leading-relaxed mb-3">Engineered for high retention on Instagram Reels and YouTube Shorts. 3-second visual hooks, kinetic motion typography, and fast-paced edits designed for virality and high shares.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[9px] sm:text-[10px] border border-white/15 px-2 py-1 text-white/40 uppercase tracking-wider">3-Sec Hooks</span>
+                        <span class="text-[9px] sm:text-[10px] border border-white/15 px-2 py-1 text-white/40 uppercase tracking-wider">Kinetic Subtitles</span>
+                        <span class="text-[9px] sm:text-[10px] border border-white/15 px-2 py-1 text-white/40 uppercase tracking-wider">High Retention</span>
+                    </div>
+                </div>
+                <div class="fade-up bg-black p-5 sm:p-8 service-card">
+                    <div class="flex items-center gap-3 mb-3 sm:mb-4">
+                        <span class="font-bebas text-3xl sm:text-4xl text-white/20">03</span>
+                        <iconify-icon icon="lucide:calendar" width="18" class="text-white/40"></iconify-icon>
+                    </div>
+                    <h3 class="font-bebas text-xl sm:text-3xl tracking-tight mb-2 sm:mb-3">Strategic Content Planning</h3>
+                    <p class="text-[11px] sm:text-sm text-white/50 leading-relaxed mb-3">Every reel and post is mapped to upcoming tournaments, net practice sessions, fitness milestones, and prime audience consumption hours to maximize reach.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[9px] sm:text-[10px] border border-white/15 px-2 py-1 text-white/40 uppercase tracking-wider">Tournament Roadmaps</span>
+                        <span class="text-[9px] sm:text-[10px] border border-white/15 px-2 py-1 text-white/40 uppercase tracking-wider">Prime-Time</span>
+                        <span class="text-[9px] sm:text-[10px] border border-white/15 px-2 py-1 text-white/40 uppercase tracking-wider">Calendars</span>
+                    </div>
+                </div>
+                <div class="fade-up bg-black p-5 sm:p-8 service-card">
+                    <div class="flex items-center gap-3 mb-3 sm:mb-4">
+                        <span class="font-bebas text-3xl sm:text-4xl text-white/20">04</span>
+                        <iconify-icon icon="lucide:award" width="18" class="text-white/40"></iconify-icon>
+                    </div>
+                    <h3 class="font-bebas text-xl sm:text-3xl tracking-tight mb-2 sm:mb-3">Brand &amp; Sponsor Readiness</h3>
+                    <p class="text-[11px] sm:text-sm text-white/50 leading-relaxed mb-3">Positioning players not just as competitors on the pitch, but as recognizable personalities with commercial value, attractive to corporate brands and sponsors.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[9px] sm:text-[10px] border border-white/15 px-2 py-1 text-white/40 uppercase tracking-wider">Sponsor Deck Fit</span>
+                        <span class="text-[9px] sm:text-[10px] border border-white/15 px-2 py-1 text-white/40 uppercase tracking-wider">Roster Dignity</span>
+                        <span class="text-[9px] sm:text-[10px] border border-white/15 px-2 py-1 text-white/40 uppercase tracking-wider">Brand Identity</span>
+                    </div>
+                </div>
+            </div>
+            <div class="fade-up mt-8 sm:mt-12 flex flex-wrap justify-center gap-3 sm:gap-8">
+                <div class="flex items-center gap-2 text-white/40"><iconify-icon icon="lucide:zap" width="14"></iconify-icon><span class="text-[10px] sm:text-xs uppercase tracking-wider font-semibold">Rapid Turnaround</span></div>
+                <div class="flex items-center gap-2 text-white/40"><iconify-icon icon="lucide:users" width="14"></iconify-icon><span class="text-[10px] sm:text-xs uppercase tracking-wider font-semibold">Dedicated Crew</span></div>
+                <div class="flex items-center gap-2 text-white/40"><iconify-icon icon="lucide:check-circle" width="14"></iconify-icon><span class="text-[10px] sm:text-xs uppercase tracking-wider font-semibold">Zero Effort From Athlete</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="relative py-16 sm:py-32 px-4 sm:px-8 border-t border-white/10">
+        <div class="max-w-3xl mx-auto">
+            <div class="fade-up mb-10 sm:mb-12 text-center">
+                <span class="section-num uppercase text-white/30 block mb-2">06 / Questions</span>
+                <h2 class="font-bebas text-4xl sm:text-7xl md:text-8xl tracking-tight leading-[0.9]">FAQ</h2>
+                <p class="mt-3 sm:mt-4 text-xs sm:text-sm text-white/40 max-w-md mx-auto leading-relaxed">Everything you need to know about ProLift Sports. Still have questions? Reach out to us directly.</p>
+            </div>
+            <div class="fade-up" id="faqList">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <p class="text-sm sm:text-lg font-semibold text-white/90">What does ProLift Sports do?</p>
+                        <iconify-icon icon="lucide:plus" width="20" class="text-white/40 faq-icon"></iconify-icon>
+                    </div>
+                    <div class="faq-answer"><p class="text-xs sm:text-sm text-white/50 leading-relaxed">ProLift Sports is an athlete management and sports media agency based in Nagpur, India. We help athletes build personal brands, create premium cinematic content, manage social media, negotiate brand collaborations, and produce commercial shoots. We represent premier cricketers including Team India and IPL players.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <p class="text-sm sm:text-lg font-semibold text-white/90">Where is ProLift Sports based?</p>
+                        <iconify-icon icon="lucide:plus" width="20" class="text-white/40 faq-icon"></iconify-icon>
+                    </div>
+                    <div class="faq-answer"><p class="text-xs sm:text-sm text-white/50 leading-relaxed">ProLift Sports is based in Nagpur, Maharashtra, India. We work with athletes across India and have an international project called Vyom Sports in England, United Kingdom, expanding our reach into Europe.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <p class="text-sm sm:text-lg font-semibold text-white/90">Who are the athletes managed by ProLift Sports?</p>
+                        <iconify-icon icon="lucide:plus" width="20" class="text-white/40 faq-icon"></iconify-icon>
+                    </div>
+                    <div class="faq-answer"><p class="text-xs sm:text-sm text-white/50 leading-relaxed">Our roster includes Yash Thakur (Team India / Lucknow Super Giants), Atharva Taide (PBKS / SRH), Darshan Nalkande (Gujarat Titans), and Apoorv Wankhade (Vidarbha, former Mumbai Indians / KKR). We also work with trusted athletes like Aman Mokhade (Irani Cup Winner), Shrikant Wagh, Disha Kasat (WPL Winner), and Saurabh Dubey.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <p class="text-sm sm:text-lg font-semibold text-white/90">What content packages does ProLift offer?</p>
+                        <iconify-icon icon="lucide:plus" width="20" class="text-white/40 faq-icon"></iconify-icon>
+                    </div>
+                    <div class="faq-answer"><p class="text-xs sm:text-sm text-white/50 leading-relaxed">We offer three content packages: Single Reel (starter evaluation), 4 Reels Package (monthly momentum with consistent weekly touchpoints), and 8 Reels Package (full-scale 360&deg; management for elite athletes). All packages include cinematic editing, sound design, and color grading. Contact us at prolift.pvt@gmail.com for package details and custom quotes.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <p class="text-sm sm:text-lg font-semibold text-white/90">What is the ProLift No Deal No Fee model?</p>
+                        <iconify-icon icon="lucide:plus" width="20" class="text-white/40 faq-icon"></iconify-icon>
+                    </div>
+                    <div class="faq-answer"><p class="text-xs sm:text-sm text-white/50 leading-relaxed">For brand deals and collaborations, ProLift operates on a No Deal, No Fee basis. There are no joining fees. We pitch you to relevant brands, handle full negotiation and communication, and manage campaign coordination. We only earn when you earn. Our success is directly linked to yours.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <p class="text-sm sm:text-lg font-semibold text-white/90">How can brands partner with ProLift athletes?</p>
+                        <iconify-icon icon="lucide:plus" width="20" class="text-white/40 faq-icon"></iconify-icon>
+                    </div>
+                    <div class="faq-answer"><p class="text-xs sm:text-sm text-white/50 leading-relaxed">Brands can partner with ProLift athletes through brand ambassadorships (long-term face of brand, TVCs), match and league campaigns (IPL-season activations), digital social content (high-engagement reels, product trials), and events and appearances (store launches, corporate keynotes, masterclasses). Contact us at prolift.pvt@gmail.com for partnership opportunities.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <p class="text-sm sm:text-lg font-semibold text-white/90">Does ProLift Sports work with athletes outside cricket?</p>
+                        <iconify-icon icon="lucide:plus" width="20" class="text-white/40 faq-icon"></iconify-icon>
+                    </div>
+                    <div class="faq-answer"><p class="text-xs sm:text-sm text-white/50 leading-relaxed">While our primary roster is cricket-focused, ProLift Sports is equipped to work with athletes across sports including fitness, lifestyle, and youth culture. Our media production, branding, and social media management services apply to any sporting talent looking to build a professional brand.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <p class="text-sm sm:text-lg font-semibold text-white/90">What is the Vyom Sports international project?</p>
+                        <iconify-icon icon="lucide:plus" width="20" class="text-white/40 faq-icon"></iconify-icon>
+                    </div>
+                    <div class="faq-answer"><p class="text-xs sm:text-sm text-white/50 leading-relaxed">Vyom Sports is ProLift Sports' international project based in England, United Kingdom. It is a cross-border sports media bridge expanding our reach into England and Europe, facilitating bilateral sports media and global brand campaigns for dual-market visibility.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <p class="text-sm sm:text-lg font-semibold text-white/90">How do I join ProLift as an athlete?</p>
+                        <iconify-icon icon="lucide:plus" width="20" class="text-white/40 faq-icon"></iconify-icon>
+                    </div>
+                    <div class="faq-answer"><p class="text-xs sm:text-sm text-white/50 leading-relaxed">To join ProLift Sports, fill out the application form on our Join Us page, or contact us directly at prolift.pvt@gmail.com. You can also reach our founders: Arjun Gawre at +91 90282 41131 or Mayuresh Jumle at +91 83788 17364.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <p class="text-sm sm:text-lg font-semibold text-white/90">What makes ProLift different from other sports agencies?</p>
+                        <iconify-icon icon="lucide:plus" width="20" class="text-white/40 faq-icon"></iconify-icon>
+                    </div>
+                    <div class="faq-answer"><p class="text-xs sm:text-sm text-white/50 leading-relaxed">ProLift offers turnkey in-house production with zero agency friction. We handle scripting, athlete scheduling, shoots, and editing in-house. Our content is engineered for algorithmic performance with 3-second hooks, kinetic subtitles, and broadcast-grade sound and color. We guarantee deliverables with clear contractual terms, category exclusivity, and disciplined delivery timelines.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOIN US -->
     <section id="join" class="relative py-16 sm:py-32 px-4 sm:px-8 border-t border-white/10 mobile-bottom-pad">
         <div class="max-w-4xl mx-auto">
             <div class="fade-up text-center mb-8 sm:mb-12">
-                <span class="text-[10px] sm:text-xs font-semibold tracking-[0.3em] uppercase text-white/30">05</span>
-                <h2 class="font-bebas text-4xl sm:text-7xl md:text-8xl tracking-tight mt-1 sm:mt-2">JOIN US</h2>
-                <p class="mt-3 sm:mt-4 text-xs sm:text-sm text-white/40 max-w-sm mx-auto leading-relaxed">Fill out the form below and our team will get back to you.</p>
+                <span class="section-num uppercase text-white/30 block mb-2">07 / Get Started</span>
+                <h2 class="font-bebas text-4xl sm:text-7xl md:text-8xl tracking-tight leading-[0.9]">JOIN US</h2>
+                <p class="mt-3 sm:mt-4 text-xs sm:text-sm text-white/40 max-w-sm mx-auto leading-relaxed">Fill out the form below and our team will get back to you within 48 hours.</p>
             </div>
             <div class="fade-up bg-white/5 border border-white/10 overflow-hidden">
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUFhwnfyf9Y3TjroQy65KfxzSkuLkS2_H8KuYZRrgVfdVTSA/viewform?embedded=true" width="100%" height="600" class="sm:!h-[750px]" frameborder="0" marginheight="0" marginwidth="0" style="display:block;max-width:100%;">Loading…</iframe>
             </div>
+            <div class="fade-up mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/10">
+                <div class="bg-black p-5 sm:p-6 flex items-center gap-4 service-card">
+                    <div class="w-10 h-10 border border-white/15 flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:mail" width="16" class="text-white/40"></iconify-icon></div>
+                    <div class="min-w-0">
+                        <p class="text-[9px] text-white/30 uppercase tracking-wider">Email</p>
+                        <a href="mailto:prolift.pvt@gmail.com" class="text-xs sm:text-sm font-semibold text-white/80 hover:text-white transition-colors break-all">prolift.pvt@gmail.com</a>
+                    </div>
+                </div>
+                <div class="bg-black p-5 sm:p-6 flex items-center gap-4 service-card">
+                    <div class="w-10 h-10 border border-white/15 flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:instagram" width="16" class="text-white/40"></iconify-icon></div>
+                    <div class="min-w-0">
+                        <p class="text-[9px] text-white/30 uppercase tracking-wider">Instagram</p>
+                        <a href="https://www.instagram.com/proliftsports_/" target="_blank" rel="noopener" class="text-xs sm:text-sm font-semibold text-white/80 hover:text-white transition-colors">@proliftsports_</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- FOUNDERS -->
     <section id="founders" class="relative py-14 sm:py-20 px-4 sm:px-8 border-t border-white/10">
         <div class="max-w-2xl mx-auto text-center">
             <div class="fade-up">
                 <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-white/30">The Minds Behind</span>
-                <h2 class="font-bebas text-3xl sm:text-5xl tracking-tight mt-2 mb-10 sm:mb-14">FOUNDERS</h2>
+                <h2 class="font-bebas text-3xl sm:text-5xl tracking-tight mt-2 mb-8 sm:mb-12">FOUNDERS</h2>
             </div>
-            <div class="fade-up flex items-center justify-center gap-5 sm:gap-10">
-                <a href="https://www.instagram.com/arjunngawre?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" class="founder-card border border-white/15 p-5 sm:p-8 text-center hover:border-white transition-all w-32 sm:w-44">
+            <div class="fade-up flex items-center justify-center gap-4 sm:gap-10">
+                <a href="https://www.instagram.com/arjunngawre?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" class="founder-card border border-white/15 p-4 sm:p-8 text-center hover:border-white transition-all w-32 sm:w-44 block">
                     <div class="w-14 h-14 sm:w-20 sm:h-20 mx-auto border border-white/20 flex items-center justify-center mb-3"><span class="font-bebas text-xl sm:text-3xl text-white/40">AG</span></div>
-                    <p class="font-bebas text-base sm:text-2xl tracking-tight leading-tight">ARJUN<br>GAWRE</p>
+                    <p class="font-bebas text-sm sm:text-2xl tracking-tight leading-tight">ARJUN<br>GAWRE</p>
+                    <p class="text-[8px] sm:text-[10px] text-white/30 mt-2 tracking-wider">+91 90282 41131</p>
                     <div class="flex items-center justify-center gap-1 mt-2 text-white/30"><iconify-icon icon="lucide:instagram" width="11"></iconify-icon><span class="text-[8px] sm:text-[9px] uppercase tracking-wider font-semibold">Connect</span></div>
                 </a>
-                <a href="https://www.instagram.com/__mayuresh__14?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" class="founder-card border border-white/15 p-5 sm:p-8 text-center hover:border-white transition-all w-32 sm:w-44">
+                <a href="https://www.instagram.com/__mayuresh__14?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" class="founder-card border border-white/15 p-4 sm:p-8 text-center hover:border-white transition-all w-32 sm:w-44 block">
                     <div class="w-14 h-14 sm:w-20 sm:h-20 mx-auto border border-white/20 flex items-center justify-center mb-3"><span class="font-bebas text-xl sm:text-3xl text-white/40">MJ</span></div>
-                    <p class="font-bebas text-base sm:text-2xl tracking-tight leading-tight">MAYURESH<br>JUMLE</p>
+                    <p class="font-bebas text-sm sm:text-2xl tracking-tight leading-tight">MAYURESH<br>JUMLE</p>
+                    <p class="text-[8px] sm:text-[10px] text-white/30 mt-2 tracking-wider">+91 83788 17364</p>
                     <div class="flex items-center justify-center gap-1 mt-2 text-white/30"><iconify-icon icon="lucide:instagram" width="11"></iconify-icon><span class="text-[8px] sm:text-[9px] uppercase tracking-wider font-semibold">Connect</span></div>
                 </a>
             </div>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="border-t border-white/10 py-8 sm:py-12 px-4 sm:px-8" style="padding-bottom: calc(2rem + env(safe-area-inset-bottom))">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
-            <div class="flex items-center gap-3">
-                <img src="https://z-cdn-media.chatglm.cn/files/f91c8087-5dc1-4450-b335-873e4172d743.png?auth_key=1890930068-1e92cc0b5ae046c9ab1f708c357f9eac-0-9cf47af7dff051c4d1b90dbcbbe4766f" alt="PRO LIFT" class="h-6 sm:h-8 object-contain">
-                <span class="text-[10px] sm:text-xs text-white/30">© 2025 ProLift Sports</span>
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8 mb-6 sm:mb-8">
+                <div class="flex items-center gap-3">
+                    <img src="https://z-cdn-media.chatglm.cn/files/f91c8087-5dc1-4450-b335-873e4172d743.png?auth_key=1890930068-1e92cc0b5ae046c9ab1f708c357f9eac-0-9cf47af7dff051c4d1b90dbcbbe4766f" alt="ProLift Sports" class="h-7 sm:h-9 object-contain">
+                    <span class="text-[10px] sm:text-xs text-white/30">&copy; 2026 ProLift Sports &middot; All Rights Reserved</span>
+                </div>
+                <div class="flex items-center gap-5 sm:gap-6">
+                    <a href="https://www.instagram.com/proliftsports_/" target="_blank" rel="noopener" aria-label="Instagram" class="w-10 h-10 flex items-center justify-center text-white/30 hover:text-white transition-colors touch-target"><iconify-icon icon="lucide:instagram" width="18"></iconify-icon></a>
+                    <a href="mailto:prolift.pvt@gmail.com" aria-label="Email" class="w-10 h-10 flex items-center justify-center text-white/30 hover:text-white transition-colors touch-target"><iconify-icon icon="lucide:mail" width="18"></iconify-icon></a>
+                    <a href="tel:+919028241131" aria-label="Phone" class="w-10 h-10 flex items-center justify-center text-white/30 hover:text-white transition-colors touch-target"><iconify-icon icon="lucide:phone" width="18"></iconify-icon></a>
+                </div>
             </div>
-            <div class="flex items-center gap-5 sm:gap-6">
-                <a href="https://www.instagram.com/proliftsports_/" target="_blank" rel="noopener" class="w-10 h-10 flex items-center justify-center text-white/30 hover:text-white transition-colors"><iconify-icon icon="lucide:instagram" width="18"></iconify-icon></a>
-                <a href="#" class="w-10 h-10 flex items-center justify-center text-white/30 hover:text-white transition-colors"><iconify-icon icon="lucide:twitter" width="18"></iconify-icon></a>
-                <a href="#" class="w-10 h-10 flex items-center justify-center text-white/30 hover:text-white transition-colors"><iconify-icon icon="lucide:linkedin" width="18"></iconify-icon></a>
-                <a href="#" class="w-10 h-10 flex items-center justify-center text-white/30 hover:text-white transition-colors"><iconify-icon icon="lucide:youtube" width="18"></iconify-icon></a>
+            <div class="border-t border-white/5 pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+                <p class="text-[10px] sm:text-xs text-white/25 leading-relaxed max-w-md">ProLift Sports &middot; Athlete Management &amp; Sports Media Agency &middot; Nagpur, Maharashtra, India</p>
+                <p class="font-bebas text-sm sm:text-base text-white/30 tracking-tight">Building Athlete Brands. Creating Legacies.</p>
             </div>
         </div>
     </footer>
 
+    <!-- PLAYER MODAL -->
     <div id="playerModal" class="modal-overlay fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-end sm:items-center justify-center sm:p-8" style="padding-bottom:env(safe-area-inset-bottom)">
         <div class="modal-body relative w-full sm:max-w-4xl max-h-[92vh] sm:max-h-[85vh] overflow-y-auto no-scrollbar bg-neutral-950 border-t sm:border border-white/10 rounded-t-2xl sm:rounded-2xl">
-            <button onclick="closeModal()" aria-label="Close" class="sticky top-0 float-right mr-3 mt-3 w-10 h-10 flex items-center justify-center border border-white/20 hover:border-white hover:bg-white/10 transition-all z-10 rounded-full bg-black/50 sm:bg-transparent"><iconify-icon icon="lucide:x" width="18"></iconify-icon></button>
+            <button onclick="closeModal()" aria-label="Close" class="sticky top-0 float-right mr-3 mt-3 w-10 h-10 flex items-center justify-center border border-white/20 hover:border-white hover:bg-white/10 transition-all z-10 rounded-full bg-black/50 sm:bg-transparent touch-target"><iconify-icon icon="lucide:x" width="18"></iconify-icon></button>
             <div class="clear-both"></div>
             <div id="modalContent" class="relative"></div>
         </div>
     </div>
 
     <script>
-    // Video error fallback + readyState check
+    // Hero video
     (function() {
         var heroVid = document.getElementById('heroVideo');
-        if (heroVid) {
-            heroVid.addEventListener('error', function() {
-                this.style.display = 'none';
+        if (!heroVid) return;
+        heroVid.addEventListener('error', function() { this.style.display = 'none'; });
+        var p = heroVid.play();
+        if (p && typeof p.catch === 'function') {
+            p.catch(function() {
+                var retry = function() { heroVid.play().catch(function(){}); };
+                document.addEventListener('click', retry, { once: true });
+                document.addEventListener('touchstart', retry, { once: true });
+                document.addEventListener('scroll', retry, { once: true });
             });
-            if (heroVid.readyState >= 3) {
-                heroVid.style.opacity = '1';
-            } else {
-                heroVid.addEventListener('loadeddata', function() {
-                    this.style.opacity = '1';
-                });
-                heroVid.style.opacity = '0';
-                heroVid.style.transition = 'opacity 0.8s ease';
-            }
         }
     })();
-
-    const LOGO_URL = "https://z-cdn-media.chatglm.cn/files/f91c8087-5dc1-4450-b335-873e4172d743.png?auth_key=1890930068-1e92cc0b5ae046c9ab1f708c357f9eac-0-9cf47af7dff051c4d1b90dbcbbe4766f";
 
     const familyPlayers = [
         {
@@ -309,13 +785,20 @@
             image: "https://z-cdn-media.chatglm.cn/files/643f1b94-109a-4c67-a5fa-cbef69193f2b.jpeg?auth_key=1883072654-984ea756d248421db05276d2dba3560a-0-280fa4e71e2b539a5335033039d0657b",
             sport: "Cricket", role: "Premier Fast Bowler",
             iplTeam: "Lucknow Super Giants (LSG)", domesticTeam: "Vidarbha", currentStatus: "Team India",
-            bio: "Express pace merchant regularly clocking 145+ kph. Rewarded with Team India call-up for consistent performances in IPL and domestic cricket.",
-            achievements: ["IPL — Lucknow Super Giants (LSG) (2023–Present)", "Team India Selection (Current)", "Domestic Cricket — Vidarbha", "Express pace — consistently 145+ kph", "Premier fast bowling talent", "Rising star in Indian fast bowling"],
+            bio: "Express pace merchant regularly clocking 145+ kph. Rewarded with Team India call-up for consistent performances in IPL and domestic cricket. First bowler of IPL 2024 to take five wickets in a match against Gujarat.",
+            achievements: [
+                "IPL \u2014 Lucknow Super Giants (LSG) (2023\u2013Present)",
+                "Team India Selection (Current)",
+                "Domestic Cricket \u2014 Vidarbha",
+                "First IPL 2024 five-wicket haul (5/30 vs Gujarat)",
+                "Express pace \u2014 consistently 145+ kph",
+                "Premier fast bowling talent & death-overs specialist"
+            ],
             stats: [
-                { label: "Matches", value: "—" },
-                { label: "Wickets", value: "—" },
-                { label: "Economy", value: "—" },
-                { label: "Best", value: "—" }
+                { label: "Matches", value: "22" },
+                { label: "Wickets", value: "27" },
+                { label: "Economy", value: "10.60" },
+                { label: "Best", value: "5/30" }
             ]
         },
         {
@@ -323,13 +806,20 @@
             image: "https://z-cdn-media.chatglm.cn/files/002be920-875b-46b3-8c8c-8cdee57eeb7b.jpeg?auth_key=1883072654-570d977db3b740ebbce16a89b9071474-0-0db214ff37d5c38e08e422063d4d3c73",
             sport: "Cricket", role: "All-Rounder",
             iplTeam: "Gujarat Titans", domesticTeam: "Vidarbha", currentStatus: null,
-            bio: "A dynamic all-rounder who contributes with both bat and ball. Played a crucial role in Vidarbha's Vijay Hazare Trophy triumph and is known for picking up key breakthroughs in pressure situations.",
-            achievements: ["IPL — Gujarat Titans (2022–Present)", "Vijay Hazare Trophy Winner", "Domestic Cricket — Vidarbha", "Key wicket-taker in limited-overs cricket", "Effective powerplay and middle-overs bowler", "Valuable lower-order batting contributor"],
+            bio: "A dynamic all-rounder who contributes with both bat and ball. Played a crucial role in Vidarbha's Vijay Hazare Trophy triumph and holds the rare domestic record of 4 wickets in 4 balls.",
+            achievements: [
+                "IPL \u2014 Gujarat Titans (2022\u2013Present)",
+                "Vijay Hazare Trophy Winner",
+                "Domestic Cricket \u2014 Vidarbha",
+                "Rare record: 4 wickets in 4 balls",
+                "Key wicket-taker in limited-overs cricket",
+                "Valuable lower-order batting contributor"
+            ],
             stats: [
-                { label: "Matches", value: "—" },
-                { label: "Wickets", value: "—" },
-                { label: "Economy", value: "—" },
-                { label: "Best", value: "—" }
+                { label: "Matches", value: "6" },
+                { label: "Wickets", value: "6" },
+                { label: "Economy", value: "10.57" },
+                { label: "Best", value: "2/21" }
             ]
         },
         {
@@ -337,13 +827,20 @@
             image: "https://z-cdn-media.chatglm.cn/files/fcb81e8c-762a-4f69-8964-2ca37e92ccfe.jpeg?auth_key=1883072654-67e28e7aec3d408b8fe25837c91fec17-0-003168b1e044b0f7cc3ede9f218b29d6",
             sport: "Cricket", role: "Explosive Opener / Top-Order Batsman",
             iplTeam: "PBKS / SRH", domesticTeam: "Vidarbha", currentStatus: null,
-            bio: "An aggressive top-order batsman who can take the game away from the opposition in the powerplay. His explosive stroke play makes him a dangerous proposition in any format.",
-            achievements: ["IPL — PBKS / SRH (2023–Present)", "Domestic Cricket — Vidarbha", "Explosive top-order stroke player", "Dangerous in powerplay overs", "High strike-rate batting ability"],
+            bio: "An aggressive top-order batsman who can take the game away from the opposition in the powerplay. Only player after Yuvraj Singh to score 300+ in a Cooch Behar Trophy final. His explosive stroke play makes him dangerous in any format.",
+            achievements: [
+                "IPL \u2014 PBKS / SRH (2023\u2013Present)",
+                "Domestic Cricket \u2014 Vidarbha",
+                "300+ in Cooch Behar Trophy final (after Yuvraj Singh)",
+                "Explosive top-order stroke player",
+                "High strike-rate in powerplay overs",
+                "Dynamic youth cricket icon"
+            ],
             stats: [
-                { label: "Matches", value: "—" },
-                { label: "Runs", value: "—" },
-                { label: "Strike Rate", value: "—" },
-                { label: "Highest", value: "—" }
+                { label: "Matches", value: "10" },
+                { label: "Runs", value: "260" },
+                { label: "Strike Rate", value: "146.89" },
+                { label: "Highest", value: "66" }
             ]
         },
         {
@@ -351,13 +848,20 @@
             image: "https://z-cdn-media.chatglm.cn/files/593f4bff-1f62-4432-bc57-71a737d8f43d.jpeg?auth_key=1883072654-250a4b44f0344348a789d31c749a64b4-0-c3643d5c3a8c46874832353b6624f632",
             sport: "Cricket", role: "Power Hitter",
             iplTeam: "Mumbai Indians / KKR", domesticTeam: "Vidarbha", currentStatus: null,
-            bio: "An experienced domestic campaigner and powerful middle-order batsman. A key figure in Vidarbha's setup, known for his ability to change the game with explosive hitting and building innings under pressure.",
-            achievements: ["IPL — Mumbai Indians / KKR (2015–2016)", "Domestic Cricket — Vidarbha", "Experienced middle-order batsman", "Power-hitting ability in death overs", "Consistent domestic performer", "Known for building innings under pressure"],
+            bio: "An experienced domestic campaigner and powerful middle-order batsman. Scored a prolific 157* for Vidarbha against Rest of India. A key figure in Vidarbha's setup, known for his ability to change the game with explosive hitting and building innings under pressure.",
+            achievements: [
+                "IPL \u2014 Mumbai Indians / KKR (2015\u20132016)",
+                "Domestic Cricket \u2014 Vidarbha",
+                "Prolific 157* vs Rest of India",
+                "Leading run-scorer with 466 runs at avg 52",
+                "Experienced middle-order batsman",
+                "Power-hitting ability in death overs"
+            ],
             stats: [
-                { label: "Matches", value: "—" },
-                { label: "Runs", value: "—" },
-                { label: "Strike Rate", value: "—" },
-                { label: "Highest", value: "—" }
+                { label: "Matches", value: "\u2014" },
+                { label: "Runs", value: "\u2014" },
+                { label: "Strike Rate", value: "\u2014" },
+                { label: "Highest", value: "157*" }
             ]
         }
     ];
@@ -376,23 +880,24 @@
     ];
 
     const workVideos = [
-        { title: "THE PITHS — BRAND FILM", subtitle: "Commercial Production", reelId: "DYtcu4LJRB4", link: "https://www.instagram.com/reel/DYtcu4LJRB4/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-        { title: "YASH THAKUR — REEL", subtitle: "Content Creation", reelId: "DY7PHKVTpa4", link: "https://www.instagram.com/reel/DY7PHKVTpa4/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-        { title: "AERITHON SPORTS — PRODUCT SHOWCASE", subtitle: "Brand Collaboration", reelId: "DWA3MDjjOtO", link: "https://www.instagram.com/reel/DWA3MDjjOtO/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" }
+        { title: "THE PITHS \u2014 BRAND FILM", subtitle: "Commercial Production", reelId: "DYtcu4LJRB4", link: "https://www.instagram.com/reel/DYtcu4LJRB4/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+        { title: "YASH THAKUR \u2014 REEL", subtitle: "Content Creation", reelId: "DY7PHKVTpa4", link: "https://www.instagram.com/reel/DY7PHKVTpa4/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+        { title: "AERITHON SPORTS \u2014 PRODUCT SHOWCASE", subtitle: "Brand Collaboration", reelId: "DWA3MDjjOtO", link: "https://www.instagram.com/reel/DWA3MDjjOtO/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" }
     ];
 
     function renderFamilyPlayers() {
         document.getElementById('familyGrid').innerHTML = familyPlayers.map((p, i) => `
-            <div class="player-card border border-white/10 overflow-hidden" onclick="openModal(${i})">
-                <div class="aspect-[3/4] overflow-hidden bg-neutral-900">
-                    <img src="${p.image}" alt="${p.name}" class="card-img w-full h-full object-cover object-center" onerror="this.style.display='none';this.parentElement.classList.add('flex','items-center','justify-center');this.parentElement.innerHTML='<span class=\\'font-bebas text-3xl text-white/15\\'>${p.name.split(' ').map(n=>n[0]).join('')}</span>';">
+            <div class="player-card border border-white/10 overflow-hidden bg-black" onclick="openModal(${i})">
+                <div class="aspect-[3/4] overflow-hidden bg-neutral-900 relative">
+                    <img src="${p.image}" alt="${p.name} - ${p.role}" class="card-img w-full h-full object-cover object-center" onerror="this.style.display='none';this.parentElement.classList.add('flex','items-center','justify-center');this.parentElement.innerHTML='<span class=\\'font-bebas text-3xl text-white/15\\'>${p.name.split(' ').map(n=>n[0]).join('')}</span>';">
+                    ${p.currentStatus ? `<div class="absolute top-2 left-2 sm:top-3 sm:left-3 flex items-center gap-1 bg-black/60 backdrop-blur-sm border border-white/20 px-2 py-1 rounded-full"><div class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></div><span class="text-[7px] sm:text-[8px] font-bold tracking-wider uppercase text-green-400">${p.currentStatus}</span></div>` : ''}
                 </div>
                 <div class="p-3 sm:p-5">
                     <h3 class="font-bebas text-lg sm:text-3xl tracking-tight leading-tight">${p.name}</h3>
                     <p class="text-[9px] sm:text-xs text-white/40 mt-0.5 tracking-wider uppercase">${p.role}</p>
                     <div class="flex items-center gap-1 mt-2 sm:mt-3 text-white/30">
-                        <iconify-icon icon="lucide:arrow-up-right" width="12"></iconify-icon>
-                        <span class="text-[9px] tracking-[0.15em] uppercase font-semibold">View</span>
+                        <span class="text-[9px] tracking-[0.15em] uppercase font-semibold">View Profile</span>
+                        <iconify-icon icon="lucide:arrow-up-right" width="12" class="card-arrow"></iconify-icon>
                     </div>
                 </div>
             </div>
@@ -435,10 +940,10 @@
                 <div class="p-3 sm:p-5 border-t border-white/10">
                     <h4 class="font-bebas text-lg sm:text-2xl tracking-tight">${v.title}</h4>
                     <p class="text-[10px] sm:text-xs text-white/30 mt-0.5">${v.subtitle}</p>
-                    <a href="${v.link}" target="_blank" rel="noopener" class="ig-btn gap-2 mt-2.5 sm:mt-3 border border-white/30 px-3 sm:px-4 py-2 sm:py-2.5 text-[9px] sm:text-[10px] font-bold tracking-[0.15em] uppercase hover:bg-white hover:text-black rounded-md">
+                    <a href="${v.link}" target="_blank" rel="noopener" class="ig-btn gap-2 mt-2.5 sm:mt-3 border border-white/30 px-3 sm:px-4 py-2 sm:py-2.5 text-[9px] sm:text-[10px] font-bold tracking-[0.15em] uppercase rounded-md">
                         <iconify-icon icon="lucide:instagram" width="13"></iconify-icon>
                         Watch on Instagram
-                        <iconify-icon icon="lucide:arrow-up-right" width="11"></iconify-icon>
+                        <iconify-icon icon="lucide:arrow-up-right" width="11" class="ig-arrow"></iconify-icon>
                     </a>
                 </div>
             </div>
@@ -450,10 +955,10 @@
         if (!p) return;
         const statsHTML = p.stats && p.stats.length > 0 ? `
             <div class="border-t border-white/10 pt-4 mt-4 sm:mt-6">
-                <p class="text-[9px] sm:text-[10px] font-bold tracking-[0.2em] uppercase text-white/30 mb-3">Stats</p>
+                <p class="text-[9px] sm:text-[10px] font-bold tracking-[0.2em] uppercase text-white/30 mb-3">Career Stats (IPL)</p>
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
                     ${p.stats.map(s => `
-                        <div class="text-center border border-white/10 py-3 sm:py-4 px-2">
+                        <div class="stat-box text-center border border-white/10 py-3 sm:py-4 px-2">
                             <p class="font-bebas text-2xl sm:text-4xl tracking-tight leading-none">${s.value}</p>
                             <p class="text-[8px] sm:text-[10px] text-white/30 uppercase tracking-wider mt-1">${s.label}</p>
                         </div>
@@ -491,30 +996,61 @@
     function closeModal() { document.getElementById('playerModal').classList.remove('active'); document.body.style.overflow = ''; }
     document.getElementById('playerModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
 
+    // FAQ
+    function toggleFaq(element) {
+        var item = element.parentElement;
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function(f) { f.classList.remove('open'); });
+        if (!isOpen) item.classList.add('open');
+    }
+
+    // Mobile menu
     let menuOpen = false;
     function toggleMenu() {
         menuOpen = !menuOpen;
         const menu = document.getElementById('mobileMenu');
+        const btn = document.querySelector('button[aria-label="Menu"]');
         const b1 = document.getElementById('bar1'), b2 = document.getElementById('bar2'), b3 = document.getElementById('bar3');
-        if (menuOpen) { menu.style.maxHeight = menu.scrollHeight + 'px'; b1.style.transform = 'rotate(45deg) translate(3px, 5px)'; b2.style.opacity = '0'; b3.style.transform = 'rotate(-45deg) translate(3px, -5px)'; b3.style.width = '1.5rem'; document.body.style.overflow = 'hidden'; }
-        else { menu.style.maxHeight = '0'; b1.style.transform = ''; b2.style.opacity = '1'; b3.style.transform = ''; b3.style.width = ''; document.body.style.overflow = ''; }
+        if (menuOpen) {
+            menu.style.maxHeight = menu.scrollHeight + 'px';
+            b1.style.transform = 'rotate(45deg) translate(3px, 5px)';
+            b2.style.opacity = '0';
+            b3.style.transform = 'rotate(-45deg) translate(3px, -5px)';
+            b3.style.width = '1.5rem';
+            btn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        } else {
+            menu.style.maxHeight = '0';
+            b1.style.transform = '';
+            b2.style.opacity = '1';
+            b3.style.transform = '';
+            b3.style.width = '';
+            btn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
     }
     function closeMenu() { if (menuOpen) toggleMenu(); }
 
+    // Active nav
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
     const navObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) { navLinks.forEach(l => l.classList.remove('active', 'text-white')); navLinks.forEach(l => { if (l.getAttribute('href') === '#' + entry.target.id) l.classList.add('active', 'text-white'); }); }
+            if (entry.isIntersecting) {
+                navLinks.forEach(l => l.classList.remove('active', 'text-white'));
+                navLinks.forEach(l => { if (l.getAttribute('href') === '#' + entry.target.id) l.classList.add('active', 'text-white'); });
+            }
         });
-    }, { threshold: 0.2, rootMargin: '-60px 0px -30% 0px' });
+    }, { threshold: 0.15, rootMargin: '-60px 0px -35% 0px' });
     sections.forEach(s => navObserver.observe(s));
 
+    // Fade animations
     const fadeObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); fadeObserver.unobserve(entry.target); } });
     }, { threshold: 0.05 });
-    document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+    document.querySelectorAll('.fade-up, .fade-right, .reveal-line, .word-reveal').forEach(el => fadeObserver.observe(el));
 
+    // Nav border
     window.addEventListener('scroll', () => {
         const nav = document.getElementById('navbar');
         if (window.scrollY > 50) { nav.classList.add('border-white/20'); nav.classList.remove('border-white/10'); }
@@ -524,7 +1060,7 @@
     renderFamilyPlayers();
     renderTrustedBy();
     renderVideos();
-    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closeModal(); closeMenu(); } });
     </script>
 </body>
 </html>
